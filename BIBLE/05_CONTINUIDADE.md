@@ -11,9 +11,9 @@ Se um fato não está aqui, não é cânone estável.
 |-------|-------|
 | Título | Kael Zero |
 | Formato | HQ / Mangá |
-| Capítulo atual | Revista Nº 1 — Eco no Piso (roteiro v1.1 amarrado) |
-| Arco atual | 1 — Eco no Piso |
-| Tempo narrativo | ≈ 6 anos após morte de Adrian; ~24h da descoberta |
+| Capítulo atual | Revista Nº 2 — Protocolo Hélice (roteiro v1.0) |
+| Arco atual | 1 — Eco no Piso → transição |
+| Tempo narrativo | ≈ Dia 1 após descoberta; hospital + 2º Soft Compile |
 | Idade de Kael | 16 |
 | Idade de Helena | ~42 |
 
@@ -23,21 +23,21 @@ Se um fato não está aqui, não é cânone estável.
 
 | Atributo | Valor atual | Notas |
 |----------|-------------|-------|
-| Controle CORE | 1 (rudimentar) | Link residual; sem sync estável |
-| Eficiência | muito baixa | 1 objeto simples quase o derrubou |
+| Controle CORE | 1–2 (rudimentar+) | Link residual; treino consciente |
+| Eficiência | muito baixa | 2º/3º objeto ainda quase derruba |
 | Velocidade | baixa | Compile lento |
-| Precisão | média-baixa | Parafuso 84% estável |
-| Resistência mental | baixa sob carga | Overload no pareamento |
+| Precisão | média-baixa | Parafuso ~84%; chave/alicate frágeis |
+| Resistência mental | baixa sob carga | Channel strain warning |
 | Resistência física | baseline | Skate; sem treino de combate |
-| Capacidade energética | crítica pós-build | Quase vazia após parafuso |
+| Capacidade energética | crítica recorrente | Sangra após cada Soft Compile |
 | Criatividade | alta | Impulso + maker |
-| Estratégia | baixa em combate | — |
-| Complexidade max | sólidos simples | Peça conhecida (parafuso) |
+| Estratégia | baixa em combate | Começa a “medir” |
+| Complexidade max | sólidos simples | Ferramentas conhecidas |
 
-**Builds conhecidas:** parafuso de truck em Fase Hélice (1) — digital-físico, estabilidade ~84%  
+**Builds conhecidas:** parafuso truck; chave de fenda Hélice; alicate Hélice  
 **Módulos:** nenhum  
-**Sintomas acumulados:** epistaxe, cefaleia, febre suspeita, glitch visual  
-**Segredos que Kael guarda:** lab; CORE; mensagem do pai; materialização  
+**Sintomas acumulados:** epistaxe ×N, cefaleia, febre, glitch visual, channel strain  
+**Segredos que Kael guarda:** lab; CORE; mensagem; materialização; fragmentos 01–02/12; desenho da Pulse Cuff  
 
 ---
 
@@ -48,8 +48,8 @@ Se um fato não está aqui, não é cânone estável.
 | Localização | Cilindro no lab secreto sob a casa |
 | Status | Isolamento falhou; pareamento parcial com Kael |
 | Integração com Kael | Residual link ativo; sync completa NÃO |
-| Ecos de Adrian | Mensagem + fragmento Protocolo Hélice 01/12 |
-| Interface | HUD residual intermitente |
+| Ecos de Adrian | Mensagem + fragmentos Protocolo Hélice 01/12 + 02/12 |
+| Interface | HUD residual; INDEX INCOMPLETE; PROTOCOL TREE 16% |
 
 ---
 
@@ -58,7 +58,7 @@ Se um fato não está aqui, não é cânone estável.
 | Campo | Valor |
 |-------|-------|
 | Helena sabe do lab | Não |
-| Helena suspeita | Sim (leve) — mentira + palidez |
+| Helena suspeita | Sim — mentira + palidez + check-up hospitalar |
 | Helena acredita sobre Adrian | Suicídio / causa indefinida + bilhete |
 | Entrada do lab | Painel técnico disfarçado no escritório |
 | Bilhete da morte | “Eu tentei de tudo...” |
@@ -72,9 +72,9 @@ Se um fato não está aqui, não é cânone estável.
 |-------|-------|
 | Existência conhecida pelo público | Quase nula |
 | Contato com Kael | Nenhum (Kael não sabe) |
-| Alerta Hélice | Flag 41% — PASSIVE WATCH — Sector 7B |
-| Agentes em cena | Vozes off; Pulse Cuff (Orin) sem rosto |
-| Signal leak | DETECTED no instante do parafuso |
+| Alerta Hélice | Flag 58% — WATCH ELEVATED — Sector 7B |
+| Agentes em cena | Vozes off; Orin observa o feed; Pulse Cuff |
+| Signal leak | Confirmado por 2º Soft Compile |
 
 ---
 
@@ -82,13 +82,14 @@ Se um fato não está aqui, não é cânone estável.
 
 | Personagem | Status | Última aparição |
 |------------|--------|-----------------|
-| Kael | Ativo | #1 |
-| Helena | Ativa | #1 |
-| Adrian | Morto / vestígios | #1 (mensagem) |
-| Ryo | Ativo | #1 |
-| Maya | Ativa (seed) | #1 |
-| Professor de física | Cameo | #1 |
-| Nex / ORION | Off-screen | #1 (monitores) |
+| Kael | Ativo | #2 |
+| Helena | Ativa | #2 (hospital) |
+| Adrian | Morto / vestígios | #2 (sonho/eco) |
+| Ryo | Ativo | #2 (msgs) |
+| Maya | Ativa | #2 (suspeita) |
+| Noé Vael | Ativo (planta) | #2 — hospital, desenhando |
+| Orin Vael | Ativo (sem nome na página) | #2 — perfil + Pulse Cuff |
+| Nex / ORION | Off-screen | #2 (monitores) |
 
 ---
 
@@ -98,6 +99,7 @@ Se um fato não está aqui, não é cânone estável.
 - Ruas / caminho para casa
 - Casa Zero (sala, cozinha, escritório, quarto, banheiro, telhado)
 - Lab secreto sob a casa
+- Hospital Municipal — Port Haven
 - Sala ORION anônima (só leitor)
 
 ---
@@ -108,9 +110,14 @@ Se um fato não está aqui, não é cânone estável.
 |------|--------|--------------|
 | Bilhete de Adrian | Existe | Memória / origem |
 | Mensagem do lab | Lida | Lab |
-| Protocolo Hélice 01/12 | Fragmento | Bolso de Kael |
+| Protocolo Hélice 01/12 | Fragmento | Kael |
+| Protocolo Hélice 02/12 | Fragmento (custo biológico) | Kael |
 | Cilindro CORE | Ativo / link residual | Lab |
 | Parafuso materializado | Existe | Com Kael |
+| Chave de fenda Hélice | Existe | Mochila Kael |
+| Alicate Hélice | Existe | Lab / Kael |
+| Pulse Cuff | Vista | Pulso direito de Orin |
+| Desenho da cuff | Existe | Caderno / debaixo da cama |
 | Foto familiar | Existe | Parede da casa |
 
 ---
@@ -129,11 +136,12 @@ Se um fato não está aqui, não é cânone estável.
 
 ## Consequências pendentes
 
-- Helena vai investigar a mentira
-- Kael precisa achar o resto do Protocolo Hélice
-- ORION pode subir o confidence do flag
-- Energia crítica / recuperação
-- Ryo e Maya notaram mudança
+- Helena não comprou “ar seco”; vai apertar
+- Kael caça 03–12 do Protocolo (TREE 16%)
+- ORION em WATCH ELEVATED — próximo passo: #3 paranoia / Nex
+- Noé e Orin plantados — leitor ainda não tem nomes
+- Maya investiga por conta própria
+- Van branca mais perto
 
 ---
 
@@ -142,3 +150,4 @@ Se um fato não está aqui, não é cânone estável.
 | Cap | Arco | Resumo 1 linha | Revelações | Hooks |
 |-----|------|----------------|------------|-------|
 | #1 Eco no Piso | 1 | Kael acha o lab, pareia parcialmente com o CORE, cria um parafuso | Mensagem Adrian; Hélice; custo real | ORION watch 41%; “eles podem ouvir” |
+| #2 Protocolo Hélice | 1→2 | Soft compiles + 02/12; hospital planta Noé/Orin; ORION 58% | Custo biológico escrito; Pulse Cuff; menino doente | Continua #3 Ruído na Rede |
