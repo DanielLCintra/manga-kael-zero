@@ -1,24 +1,41 @@
-# Lettering — Revista #1
+# Lettering & Encenação — Padrão profissional
 
-## Regra absoluta
-Cada balão de fala tem **rabicho (tail)** apontando para a **boca / cabeça** de quem fala.  
-Narration box = retângulo sem rabicho.  
-SFX = fora de balão.  
-HUD/CORE = tipografia mono, sem balão de fala (ou balão retangular técnico).
+Baseado em práticas clássicas (Marvel/Shooter, lettering ocidental L→R / T→B).
 
-## Personagens (cores de referência só para produção)
-| Quem | Como reconhecer |
-|------|-----------------|
-| Kael | cabelo azul, jaqueta preta |
-| Ryo | amigo, cabelo castanho, casual |
-| Maya | fones, caderno |
-| Helena | mãe, jaleco/casa |
-| Professor | adulto sala |
-| Orin (voz) | off — balão sem personagem visível, canto |
+## Regras absolutas
 
-## QC checklist por página
-- [ ] Todo balão de diálogo tem rabicho
-- [ ] Rabicho aponta para o falante correto
-- [ ] Dois falantes no mesmo quadro = dois balões, rabichos distintos
-- [ ] Mensagem de celular = balão/retângulo de UI, não rabicho para Kael como se ele tivesse falado o texto da mãe
-- [ ] Texto PT-BR do roteiro v1.2
+1. **Balão nunca tapa rosto** (olhos, nariz, boca). Se precisar, a arte ou o balão mudam — o rosto ganha.
+2. **Planejar balão no thumbnail**, não depois. O painel tem “zona de lettering”.
+3. **Rabicho** aponta para a **boca** do falante; curto e reto; não atravessa outro rosto.
+4. **Ordem de leitura:** primeiro balão = mais alto / mais à esquerda; resposta = mais baixo / à direita.
+5. **Ancorar balões** no topo do quadro ou na borda quando possível (não “chapéu” na cabeça).
+6. **Máx. 2 falas por quadro** em diálogo; se passar, **dividir quadro**.
+7. **Headroom:** em cenas de diálogo, deixar ~25–35% superior do painel limpo para lettering.
+8. **Planos:**
+   - Estabelecimento (wide) = pouco diálogo
+   - Diálogo = medium com espaço acima das cabeças
+   - Emoção = close **sem** balão em cima do rosto (balão ao lado / no gutter)
+
+## Zona segura (produção)
+
+```
++------------------+
+|  LETTERING ZONE  |  ← balões / legendas
+|------------------|
+|                  |
+|   PERSONAGENS    |  ← rostos livres
+|                  |
++------------------+
+```
+
+## O que proibir
+
+- Balão “chapéu” pousado na cabeça  
+- Rabicho cruzando outro personagem  
+- Texto cobrindo olhos  
+- 4 réplicas no mesmo painel  
+- Balão gigante no centro do close  
+
+## Ferramenta
+
+`scripts/letter_issue01.py` — balões menores, ancorados no topo, rabicho para boca, evita centro facial.

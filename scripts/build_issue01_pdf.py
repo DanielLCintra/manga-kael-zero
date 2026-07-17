@@ -27,7 +27,7 @@ def main() -> None:
     else:
         raise SystemExit("capa não encontrada")
 
-    for i in range(1, 23):
+    for i in range(1, 25):
         for ext in (".jpg", ".png"):
             p = PAGES / f"page_{i:02d}{ext}"
             if p.exists():
