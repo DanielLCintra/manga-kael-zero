@@ -14,6 +14,7 @@ Inconsistência visual = erro de produção.
 - **Não** cyberpunk neon-purple padrão
 - **Não** auras de poder mágicas, runas, partículas fantasy
 - **Sim** aura digital **clínica** só em Matéria de Fase Hélice (constructs do CORE) — ver `02_CORE_ZERO.md`
+- **Lettering:** rabicho do balão **sempre** aponta para quem fala — ver `12_LETTERING.md` e `scripts/letter_issue01.py`
 
 ### Paleta (CSS mental)
 
