@@ -189,17 +189,20 @@ Sim, senhora.
 
 ## PÁGINA 8 — O som não é a geladeira
 
-**Quadro 1.** Foto: Adrian, Helena, Kael criança.
+**Quadro 1.** Sala. Kael no sofá com controle, luz da TV. Casa vazia, rotina.
 
-**Quadro 2.** Macarrão. Come em pé. Som grave no piso.
+**KAEL (baixo):**  
+…melhor fase do jogo. Finalmente.
 
-**Quadro 3.**
+**Quadro 2.** Foto na estante: Adrian, Helena, Kael criança. Silêncio.
+
+**Quadro 3.** Macarrão na mesa de centro. Controles pausados.  
+**SFX (piso):** *VMM—tik—VMM*
 
 **KAEL:**  
 Não foi a geladeira.
 
-**Quadro 4.** Ajoelha no carpete.  
-**SFX:** *VMM—tik—VMM*
+**Quadro 4.** Ajoelha no carpete. Mão no piso. Escuta.
 
 **KAEL:**  
 …oi?
