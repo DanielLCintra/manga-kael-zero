@@ -131,9 +131,17 @@ Helena age. Acceleration observa: “sujeito Echo + CORE = dado valioso”.
 
 ## 6. Progressão CORE (T1)
 
-Igual ao plano anterior em escala lenta:  
-parafuso → ferramentas → barreira → fuga → Forge proto → sync limitada.  
+Escala lenta — ver `02_CORE_ZERO.md` (Matéria Hélice / Soft vs Hard Compile):
+
+| Fase T1 | O que | Visual |
+|---------|-------|--------|
+| #1–#2 | Soft Compile: peças, ferramentas | Quase mundano |
+| #3–#5 | Soft defesa / fuga | Veios digitais começam |
+| #6–#8 | Primeiros projetos salvos (Biblioteca proto) | Híbrido |
+| #9–#10 | Forge proto + sync limitada | Fase Hélice parcial |
+
 **Sem** armadura/drones.  
+**Sem** “cria qualquer coisa” ainda — isso é teto de franquia.  
 Uso do CORE em Noé = evento de trama, não power-up do herói.
 
 ---

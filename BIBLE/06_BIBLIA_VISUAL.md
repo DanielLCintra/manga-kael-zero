@@ -12,7 +12,8 @@ Inconsistência visual = erro de produção.
 - Linha limpa, contrastes fortes, pouca “glow mágica”
 - Tecnologia: industrial / lab realista, LEDs frios, metal, vidro, cabos
 - **Não** cyberpunk neon-purple padrão
-- **Não** auras de poder, runas, partículas mágicas
+- **Não** auras de poder mágicas, runas, partículas fantasy
+- **Sim** aura digital **clínica** só em Matéria de Fase Hélice (constructs do CORE) — ver `02_CORE_ZERO.md`
 
 ### Paleta (CSS mental)
 
@@ -76,8 +77,11 @@ Lab = frio.
 - Cilindro de vidro + metal, instrumentação realista
 - Núcleo interno: geometria clara (esfera/anel) com luz **teal** estável, não explosiva
 - Interface HUD: tipografia mono, logs, wireframes — UI de engenharia
-- Materialização: “compilar” — poeira/partículas estruturando → sólido  
-  Preferir look de **impressão molecular / vapor → sólido**, não magia
+- Materialização iniciante: vapor/partículas → sólido quase mundano
+- **Matéria de Fase Hélice (domínio):** constructs físicos com **aura digital permanente** — translúcidos teal/ciano, circuit-glass, lattice visível; cortam/bloqueiam de verdade
+- **Não** é Lanterna Verde: sem anel, sem vontade verde, sem glow mágico genérico — é compilação informacional
+- Hold dissolvendo: construct desfaz em vapor de dados / fragmentação de lattice
+- Refs futuras de combate: `REFS/kael/kael_com_core_*` (espada/escudo = Hard Compile visual alvo)
 
 ---
 

@@ -128,6 +128,7 @@ Vilões internos devem discordar entre si. Consenso monolítico é fraco.
 8. **Helena tem agência.** Médica, inteligente, emocionalmente presente. Suspeitas crescem. Ela não é NPC maternal.
 9. **Materialização = engenharia.** Sem blueprint mental / dados / compreensão, falha, cria lixo molecular ou aborta.
 10. **Escala lenta.** Global só depois de local/pessoal estar sólido.
+11. **Matéria Hélice ≠ Lanterna Verde.** Constructs digitais-físicos por compilação + biblioteca de projetos; teto “qualquer coisa” só no longo prazo e sempre com custo. Ver `02_CORE_ZERO.md`.
 
 ---
 
@@ -150,7 +151,7 @@ um filho herda não um poder — herda o **erro, o sonho e a dívida** do pai.
 | Arquivo | Função |
 |---------|--------|
 | `01_UNIVERSO.md` | Mundo, ORION, regras científicas |
-| `02_CORE_ZERO.md` | Sistema, módulos, custos, evolução |
+| `02_CORE_ZERO.md` | Sistema, Matéria Hélice, Biblioteca, Soft/Hard Compile |
 | `03_PERSONAGENS.md` | Elenco seed + fichas |
 | `04_ARCOS.md` | Escalada da franquia |
 | `05_CONTINUIDADE.md` | Tracker vivo |
