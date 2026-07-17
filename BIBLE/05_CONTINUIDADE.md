@@ -10,10 +10,10 @@ Se um fato não está aqui, não é cânone estável.
 | Campo | Valor |
 |-------|-------|
 | Título | Kael Zero |
-| Formato | HQ / Mangá (páginas com prompts de IA) |
-| Capítulo atual | 0 (pré-Capítulo 1) |
+| Formato | HQ / Mangá |
+| Capítulo atual | Revista Nº 1 — Eco no Piso |
 | Arco atual | 1 — Eco no Piso |
-| Tempo narrativo | ≈ 6 anos após morte de Adrian |
+| Tempo narrativo | ≈ 6 anos após morte de Adrian; ~24h da descoberta |
 | Idade de Kael | 16 |
 | Idade de Helena | ~42 |
 
@@ -23,21 +23,21 @@ Se um fato não está aqui, não é cânone estável.
 
 | Atributo | Valor atual | Notas |
 |----------|-------------|-------|
-| Controle CORE | 0 | Sem sincronização |
-| Eficiência | 0 | — |
-| Velocidade | 0 | — |
-| Precisão | 0 | — |
-| Resistência mental | baseline adolescente | — |
-| Resistência física | baseline (não treinado) | Skate = leve condicionamento |
-| Capacidade energética | n/a | Pré-pareamento |
-| Criatividade | alta (potencial) | Hobby eletrônicos |
-| Estratégia | baixa em combate | Alta em gambiarra |
-| Complexidade max | — | — |
+| Controle CORE | 1 (rudimentar) | Link residual; sem sync estável |
+| Eficiência | muito baixa | 1 objeto simples quase o derrubou |
+| Velocidade | baixa | Compile lento |
+| Precisão | média-baixa | Parafuso 84% estável |
+| Resistência mental | baixa sob carga | Overload no pareamento |
+| Resistência física | baseline | Skate; sem treino de combate |
+| Capacidade energética | crítica pós-build | Quase vazia após parafuso |
+| Criatividade | alta | Impulso + maker |
+| Estratégia | baixa em combate | — |
+| Complexidade max | sólidos simples | Peça conhecida (parafuso) |
 
-**Builds conhecidas:** nenhuma  
+**Builds conhecidas:** parafuso de truck (1)  
 **Módulos:** nenhum  
-**Sintomas acumulados:** nenhum  
-**Segredos que Kael guarda:** nenhum ainda  
+**Sintomas acumulados:** epistaxe, cefaleia, febre suspeita, glitch visual  
+**Segredos que Kael guarda:** lab; CORE; mensagem do pai; materialização  
 
 ---
 
@@ -46,10 +46,10 @@ Se um fato não está aqui, não é cânone estável.
 | Campo | Valor |
 |-------|-------|
 | Localização | Cilindro no lab secreto sob a casa |
-| Status | Isolamento degradando; auto-diagnóstico ruidoso |
-| Integração com Kael | Nenhuma |
-| Ecos de Adrian | Dados/protocolos armazenados (não revelados) |
-| Interface | Inativa para Kael |
+| Status | Isolamento falhou; pareamento parcial com Kael |
+| Integração com Kael | Residual link ativo; sync completa NÃO |
+| Ecos de Adrian | Mensagem + fragmento Protocolo Hélice 01/12 |
+| Interface | HUD residual intermitente |
 
 ---
 
@@ -58,10 +58,11 @@ Se um fato não está aqui, não é cânone estável.
 | Campo | Valor |
 |-------|-------|
 | Helena sabe do lab | Não |
+| Helena suspeita | Sim (leve) — mentira + palidez |
 | Helena acredita sobre Adrian | Suicídio / causa indefinida + bilhete |
-| Entrada do lab | Painel técnico disfarçado (não placa teatral) |
+| Entrada do lab | Painel técnico disfarçado no escritório |
 | Bilhete da morte | “Eu tentei de tudo...” |
-| Condição financeira | Classe média |
+| Mensagem do lab | Eco da mesma frase + aviso Hélice |
 
 ---
 
@@ -70,10 +71,9 @@ Se um fato não está aqui, não é cânone estável.
 | Campo | Valor |
 |-------|-------|
 | Existência conhecida pelo público | Quase nula |
-| Contato com Kael | Nenhum |
-| Contato com Adrian | Confirmado em direção criativa; grau TBD na trama |
-| Agentes em cena | Nenhum ainda |
-| Alerta Hélice | Inativo / latente |
+| Contato com Kael | Nenhum (Kael não sabe) |
+| Alerta Hélice | Flag 41% — PASSIVE WATCH — Sector 7B |
+| Agentes em cena | Vozes off; sem rosto |
 
 ---
 
@@ -81,18 +81,23 @@ Se um fato não está aqui, não é cânone estável.
 
 | Personagem | Status | Última aparição |
 |------------|--------|-----------------|
-| Kael | Ativo | Pré-história |
-| Helena | Ativa | Pré-história |
-| Adrian | Morto / vestígios | Pré-história |
-| Ryo | Seed | Ainda não estreou |
-| Maya | Seed | Ainda não estreou |
-| Nex | Seed | Ainda não estreou |
+| Kael | Ativo | #1 |
+| Helena | Ativa | #1 |
+| Adrian | Morto / vestígios | #1 (mensagem) |
+| Ryo | Ativo | #1 |
+| Maya | Ativa (seed) | #1 |
+| Professor de física | Cameo | #1 |
+| Nex / ORION | Off-screen | #1 (monitores) |
 
 ---
 
 ## Locais visitados (cânone)
 
-- (vazio — pré-Capítulo 1)
+- Escola (Port Haven)
+- Ruas / caminho para casa
+- Casa Zero (sala, cozinha, escritório, quarto, banheiro, telhado)
+- Lab secreto sob a casa
+- Sala ORION anônima (só leitor)
 
 ---
 
@@ -100,10 +105,12 @@ Se um fato não está aqui, não é cânone estável.
 
 | Item | Status | Dono / local |
 |------|--------|--------------|
-| Bilhete de Adrian | Existe | Com Helena / memória familiar |
-| Protocolo Hélice | Existe (lab) | Não lido |
-| Cilindro CORE | Ativo isolado | Lab |
-| Notas destruídas | Quase todas | Adrian |
+| Bilhete de Adrian | Existe | Memória / origem |
+| Mensagem do lab | Lida | Lab |
+| Protocolo Hélice 01/12 | Fragmento | Bolso de Kael |
+| Cilindro CORE | Ativo / link residual | Lab |
+| Parafuso materializado | Existe | Com Kael |
+| Foto familiar | Existe | Parede da casa |
 
 ---
 
@@ -114,14 +121,18 @@ Se um fato não está aqui, não é cânone estável.
 | Nascimento de Kael | Anomalia Hélice detectada por Adrian |
 | Anos seguintes | Projeto Zero / CORE |
 | Kael ~10 | Adrian morre; bilhete; lab selado |
-| Kael 10–16 | Vida “normal”; Helena trabalha; Kael skate/escola |
-| Kael 16 | **Início da história** |
+| Kael 10–16 | Vida “normal” |
+| Kael 16 — Dia 0 | Descobre lab; pareamento; rejeição; 1ª materialização; flag ORION |
 
 ---
 
 ## Consequências pendentes
 
-- (nenhuma — pré-Capítulo 1)
+- Helena vai investigar a mentira
+- Kael precisa achar o resto do Protocolo Hélice
+- ORION pode subir o confidence do flag
+- Energia crítica / recuperação
+- Ryo e Maya notaram mudança
 
 ---
 
@@ -129,4 +140,4 @@ Se um fato não está aqui, não é cânone estável.
 
 | Cap | Arco | Resumo 1 linha | Revelações | Hooks |
 |-----|------|----------------|------------|-------|
-| — | — | — | — | — |
+| #1 Eco no Piso | 1 | Kael acha o lab, pareia parcialmente com o CORE, cria um parafuso | Mensagem Adrian; Hélice; custo real | ORION watch 41%; “eles podem ouvir” |

@@ -35,16 +35,21 @@ Lab = frio.
 
 ## Kael — design lock
 
-- 16 anos, magro, ombros ainda de adolescente
-- Cabelo escuro bagunçado (prático, não anime spikes extremos)
-- Olhos expressivos; humor nos gestos
-- Roupas: camiseta, hoodie, jeans, tênis de skate
+**Refs oficiais:** ver `06B_REFS_KAEL.md` e pasta `REFS/kael/`.
+
+- 16 anos, magro/atlético leve, ombros de adolescente
+- Cabelo volumoso bagunçado: azul safira/cobalto + sombras pretas
+- Olhos azul-gelo; pele morena clara
+- Brinco na orelha esquerda
+- Techwear preto: jaqueta oversized com forro/zíper azul elétrico, logo azul no bíceps, camiseta preta, cargo/botas com detalhe azul
 - Skate frequente no Arco 1
 - Mãos: cortes leves, óleo, bandaid — maker, não modelo
-- Expressão default: curiosidade + ironia leve
+- Expressão default: curiosidade + ironia leve (ainda não “mission ready”)
 - Em dor/CORE: suor, tremor, epistaxe — visceral, não “modo power”
+- **Revista #1:** apenas visual SEM CORE. HUD residual no máximo.
+- **Com CORE (futuro):** headset + visor + materializações avançadas — refs `kael_com_core_*`
 
-**Proibido:** musculatura precoce, traje heróico cedo, olhar “escolhido” constante.
+**Proibido no Arco 1:** espada/escudo energéticos, loadout de combate, olhar de escolhido constante.
 
 ---
 
