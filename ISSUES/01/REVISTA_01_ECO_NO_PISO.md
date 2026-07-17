@@ -321,13 +321,15 @@ Cilindro apaga.
 
 ## PÁGINA 16 — Sobe com prova
 
-**KAEL:**  
+Quarto. HUD residual ainda ativo (não é conversa com pessoa).
+
+**KAEL (para si / para o link):**  
 Legal.  
 Achei o porão secreto do meu pai e quase desmaiei. Dia normal.
 
 Guarda `01/12`.  
 
-**KAEL:**  
+**KAEL (para o HUD residual):**  
 A gente… termina essa conversa depois.
 
 Gota de sangue no carpete — ele não vê.
@@ -336,12 +338,13 @@ Gota de sangue no carpete — ele não vê.
 
 ## PÁGINA 17 — Mentira
 
-Lava o sangue.
+Banheiro: lava o sangue. Celular vibra.
 
-**HELENA (msg):** *Tudo bem aí?*  
-**KAEL (msg):** *Tô bem. Macarrão tava bom.*
+**UI / msgs (não balão de boca):**  
+**HELENA:** *Tudo bem aí?*  
+**KAEL:** *Tô bem. Macarrão tava bom.*
 
-**KAEL:**  
+**KAEL (baixo, sozinho):**  
 …desculpa, mãe.
 
 ---

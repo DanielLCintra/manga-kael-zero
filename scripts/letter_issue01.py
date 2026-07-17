@@ -114,22 +114,22 @@ LETTERING: dict[int, list[dict]] = {
         },
     ],
     4: [
-        # Ryo esquerda / Kael direita — falantes corretos
+        # Ryo L / Kael R — balões nos CANTOS, nunca chapéu
         {
             "text": "Kael! Se você se matar antes da prova de física, eu não vou na sua missa.",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.48, 0.34),
-            "speaker": (0.28, 0.24),
+            "speaker": (0.28, 0.26),
             "slot": 0,
-            "pos": (0.45, 0.22),
+            "pos": (0.42, 0.12),
         },
         {
             "text": "Relaxa. Você ia só pelo lanche depois.",
             "kind": "speech",
             "panel": P(0.52, 0.02, 0.98, 0.34),
-            "speaker": (0.72, 0.24),
+            "speaker": (0.72, 0.26),
             "slot": 0,
-            "pos": (0.55, 0.22),
+            "pos": (0.58, 0.12),
         },
         {
             "text": "…justo.",
@@ -137,65 +137,64 @@ LETTERING: dict[int, list[dict]] = {
             "panel": P(0.02, 0.02, 0.48, 0.34),
             "speaker": (0.28, 0.28),
             "slot": 1,
-            "pos": (0.45, 0.62),
+            "pos": (0.22, 0.55),
         },
         {
             "text": "Poucos amigos. Pouca grana. Muita casa vazia.",
             "kind": "narration",
             "panel": P(0.02, 0.36, 0.98, 0.66),
             "slot": 0,
-            "pos": (0.50, 0.82),
+            "pos": (0.50, 0.88),
         },
     ],
     5: [
-        # Painéis reais da arte; pos = âncora do balão dentro do painel
         {
             "text": "Plantão esticou de novo. Tem macarrão na geladeira. Não desmonta a torradeira. Te amo.",
             "kind": "phone",
             "panel": P(0.02, 0.02, 0.98, 0.58),
             "slot": 0,
             "label": "HELENA",
-            "pos": (0.55, 0.10),
+            "pos": (0.55, 0.08),
         },
         {
             "text": "Ela me conhece demais. Assustador.",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.98, 0.58),
-            "speaker": (0.22, 0.30),
+            "speaker": (0.22, 0.32),
             "slot": 1,
-            "pos": (0.18, 0.12),
+            "pos": (0.12, 0.22),
         },
         {
             "text": "Skate park depois da última?",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.98, 0.58),
-            "speaker": (0.58, 0.28),
+            "speaker": (0.58, 0.30),
             "slot": 2,
-            "pos": (0.82, 0.12),
+            "pos": (0.88, 0.18),
         },
         {
             "text": "Hoje não dá. Casa vazia… se eu for, acabo abrindo alguma coisa que não devia.",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.98, 0.58),
-            "speaker": (0.22, 0.34),
+            "speaker": (0.22, 0.36),
             "slot": 3,
-            "pos": (0.42, 0.72),
+            "pos": (0.40, 0.78),
         },
         {
             "text": "Tipo a torradeira.",
             "kind": "speech",
             "panel": P(0.02, 0.60, 0.49, 0.98),
-            "speaker": (0.34, 0.72),
+            "speaker": (0.34, 0.74),
             "slot": 0,
-            "pos": (0.85, 0.12),
+            "pos": (0.78, 0.12),
         },
         {
             "text": "Tipo a torradeira.",
             "kind": "speech",
             "panel": P(0.51, 0.60, 0.98, 0.98),
-            "speaker": (0.72, 0.78),
+            "speaker": (0.72, 0.80),
             "slot": 0,
-            "pos": (0.18, 0.12),
+            "pos": (0.22, 0.10),
         },
         {
             "text": "Helena é médica. Trabalha demais.\nDesde que Adrian morreu, a casa aprendeu a ficar em silêncio.",
@@ -322,15 +321,17 @@ LETTERING: dict[int, list[dict]] = {
         {
             "text": "Se você está lendo isto, o isolamento falhou.\nNão toque no cilindro sem ler o Protocolo Hélice.\n\nSe o leitor for Kael…\ndesculpa.\n\nEu tentei de tudo.",
             "kind": "caption",
-            "panel": P(0.08, 0.18, 0.92, 0.72),
+            "panel": P(0.08, 0.04, 0.92, 0.34),
             "slot": 0,
+            "pos": (0.50, 0.45),
         },
         {
             "text": "…o quê que você tentou?",
             "kind": "speech",
-            "panel": P(0.02, 0.74, 0.98, 0.98),
-            "speaker": (0.50, 0.90),
+            "panel": P(0.02, 0.68, 0.98, 0.98),
+            "speaker": (0.55, 0.82),
             "slot": 0,
+            "pos": (0.78, 0.22),
         },
     ],
     13: [
@@ -338,8 +339,9 @@ LETTERING: dict[int, list[dict]] = {
             "text": "Um de doze.\nSério, pai?",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.98, 0.40),
-            "speaker": (0.55, 0.26),
+            "speaker": (0.55, 0.28),
             "slot": 0,
+            "pos": (0.78, 0.14),
         },
         {
             "text": "Eu só… quero ver.\nNão vou mexer. Só ver.",
@@ -347,63 +349,81 @@ LETTERING: dict[int, list[dict]] = {
             "panel": P(0.02, 0.42, 0.98, 0.98),
             "speaker": (0.55, 0.72),
             "slot": 0,
+            "pos": (0.78, 0.14),
         },
     ],
     14: [
         {
             "text": "Ei— espera— eu não pedi—",
             "kind": "speech",
-            "panel": P_FULL,
-            "speaker": (0.55, 0.55),
+            "panel": P(0.02, 0.02, 0.98, 0.98),
+            "speaker": (0.38, 0.32),
             "slot": 0,
+            "pos": (0.78, 0.10),
         },
     ],
     15: [
         {
             "text": "Para! Desliga!",
             "kind": "speech",
-            "panel": P_FULL,
-            "speaker": (0.55, 0.60),
+            "panel": P(0.02, 0.02, 0.98, 0.34),
+            "speaker": (0.55, 0.28),
             "slot": 0,
+            "pos": (0.75, 0.18),
         },
     ],
     16: [
+        # 3 faixas: quarto+HUD / dor+aviso / gota no carpete
         {
             "text": "Legal.\nAchei o porão secreto do meu pai e quase desmaiei. Dia normal.",
             "kind": "speech",
-            "panel": P(0.02, 0.02, 0.98, 0.48),
-            "speaker": (0.50, 0.28),
+            "panel": P(0.02, 0.01, 0.98, 0.33),
+            "speaker": (0.58, 0.20),
             "slot": 0,
+            "pos": (0.78, 0.16),
         },
         {
+            # Fala para o link residual (HUD à esquerda), não para pessoa
             "text": "A gente… termina essa conversa depois.",
             "kind": "speech",
-            "panel": P(0.02, 0.50, 0.98, 0.98),
-            "speaker": (0.50, 0.70),
+            "panel": P(0.02, 0.34, 0.98, 0.66),
+            "speaker": (0.22, 0.52),
             "slot": 0,
+            "pos": (0.78, 0.18),
+        },
+        {
+            "text": "Ele não vê a gota no carpete.",
+            "kind": "narration",
+            "panel": P(0.02, 0.67, 0.98, 0.98),
+            "slot": 0,
+            "pos": (0.28, 0.88),
         },
     ],
     17: [
+        # 1 lava sangue (silêncio) | 2 tela preta do celular | 3 olha msg | 4 sozinho na cama
         {
             "text": "Tudo bem aí?",
             "kind": "phone",
-            "panel": P(0.15, 0.18, 0.85, 0.40),
+            "panel": P(0.22, 0.385, 0.78, 0.485),
             "slot": 0,
             "label": "HELENA",
+            "pos": (0.50, 0.22),
         },
         {
             "text": "Tô bem. Macarrão tava bom.",
             "kind": "phone",
-            "panel": P(0.15, 0.42, 0.85, 0.62),
-            "slot": 0,
+            "panel": P(0.22, 0.385, 0.78, 0.485),
+            "slot": 1,
             "label": "KAEL",
+            "pos": (0.50, 0.78),
         },
         {
             "text": "…desculpa, mãe.",
             "kind": "speech",
-            "panel": P(0.02, 0.64, 0.98, 0.98),
-            "speaker": (0.55, 0.85),
+            "panel": P(0.52, 0.52, 0.98, 0.98),
+            "speaker": (0.72, 0.80),
             "slot": 0,
+            "pos": (0.38, 0.22),
         },
     ],
     18: [
@@ -430,23 +450,22 @@ LETTERING: dict[int, list[dict]] = {
         },
     ],
     19: [
-        # 3 bandas iguais ~0.33
         {"text": "MANHÃ", "kind": "caption", "panel": P(0.02, 0.02, 0.20, 0.08), "slot": 0, "pos": (0.50, 0.50)},
         {
             "text": "Você tá gelado. Dormiu direito?",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.48, 0.33),
-            "speaker": (0.22, 0.22),
+            "speaker": (0.22, 0.24),
             "slot": 0,
-            "pos": (0.55, 0.22),
+            "pos": (0.55, 0.12),
         },
         {
             "text": "Mais ou menos. Prova hoje. Cabeça zoada.",
             "kind": "speech",
             "panel": P(0.52, 0.02, 0.98, 0.33),
-            "speaker": (0.78, 0.22),
+            "speaker": (0.78, 0.24),
             "slot": 0,
-            "pos": (0.45, 0.22),
+            "pos": (0.45, 0.12),
         },
         {
             "text": "Sangrou o nariz?",
@@ -454,7 +473,7 @@ LETTERING: dict[int, list[dict]] = {
             "panel": P(0.02, 0.34, 0.48, 0.50),
             "speaker": (0.22, 0.48),
             "slot": 0,
-            "pos": (0.55, 0.35),
+            "pos": (0.40, 0.22),
         },
         {
             "text": "Não. Só… dormi mal.",
@@ -462,7 +481,7 @@ LETTERING: dict[int, list[dict]] = {
             "panel": P(0.52, 0.34, 0.98, 0.50),
             "speaker": (0.72, 0.48),
             "slot": 0,
-            "pos": (0.45, 0.35),
+            "pos": (0.78, 0.18),
         },
         {
             "text": "Se passar mal, me liga. E Kael… eu sei quando você tá escondendo coisa. Sempre soube.",
@@ -470,15 +489,15 @@ LETTERING: dict[int, list[dict]] = {
             "panel": P(0.08, 0.50, 0.92, 0.66),
             "speaker": (0.28, 0.58),
             "slot": 0,
-            "pos": (0.50, 0.40),
+            "pos": (0.50, 0.35),
         },
         {
             "text": "Eu sei.",
             "kind": "speech",
             "panel": P(0.02, 0.68, 0.98, 0.98),
-            "speaker": (0.72, 0.78),
+            "speaker": (0.70, 0.82),
             "slot": 0,
-            "pos": (0.38, 0.16),
+            "pos": (0.22, 0.14),
         },
     ],
     20: [
@@ -486,93 +505,97 @@ LETTERING: dict[int, list[dict]] = {
             "text": "…mano. Alô?",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.54, 0.34),
-            "speaker": (0.20, 0.22),
+            "speaker": (0.22, 0.22),
             "slot": 0,
-            "pos": (0.28, 0.16),
+            "pos": (0.38, 0.12),
         },
         {
             "text": "Você tá estranho hoje.",
             "kind": "speech",
             "panel": P(0.02, 0.02, 0.54, 0.34),
-            "speaker": (0.20, 0.24),
+            "speaker": (0.22, 0.24),
             "slot": 1,
-            "pos": (0.28, 0.48),
+            "pos": (0.72, 0.62),
         },
         {
             "text": "Desculpa. Tô aqui. Continua.",
             "kind": "speech",
             "panel": P(0.56, 0.02, 0.98, 0.34),
-            "speaker": (0.78, 0.20),
+            "speaker": (0.78, 0.22),
             "slot": 0,
-            "pos": (0.30, 0.16),
+            "pos": (0.28, 0.14),
         },
         {
             "text": "Dormi três horas. Me julga depois.",
             "kind": "speech",
             "panel": P(0.56, 0.02, 0.98, 0.34),
-            "speaker": (0.78, 0.22),
+            "speaker": (0.78, 0.24),
             "slot": 1,
-            "pos": (0.72, 0.16),
+            "pos": (0.70, 0.55),
+        },
+        {
+            "text": "Você tá diferente hoje.",
+            "kind": "caption",
+            "panel": P(0.02, 0.36, 0.34, 0.64),
+            "slot": 0,
+            "pos": (0.55, 0.14),
         },
         {
             "text": "Não sei. Só… diferente.",
             "kind": "speech",
             "panel": P(0.02, 0.36, 0.34, 0.64),
-            "speaker": (0.18, 0.50),
-            "slot": 0,
-            "pos": (0.50, 0.16),
-        },
-        {
-            "text": "Você tá diferente hoje.",
-            "kind": "caption",
-            "panel": P(0.66, 0.36, 0.98, 0.64),
-            "slot": 0,
-            "pos": (0.50, 0.25),
+            "speaker": (0.20, 0.52),
+            "slot": 1,
+            "pos": (0.72, 0.78),
         },
         {
             "text": "Diferente como?",
             "kind": "speech",
             "panel": P(0.36, 0.36, 0.64, 0.64),
-            "speaker": (0.50, 0.55),
+            "speaker": (0.52, 0.55),
             "slot": 0,
-            "pos": (0.50, 0.14),
+            "pos": (0.70, 0.14),
         },
         {
             "text": "Ah, não…",
             "kind": "speech",
             "panel": P(0.02, 0.66, 0.98, 0.98),
-            "speaker": (0.55, 0.82),
+            "speaker": (0.42, 0.82),
             "slot": 0,
-            "pos": (0.22, 0.18),
+            "pos": (0.18, 0.14),
         },
     ],
     21: [
         {
             "text": "Sumiu. Claro que sumiu.",
             "kind": "speech",
-            "panel": P_FULL,
-            "speaker": (0.55, 0.45),
+            "panel": P(0.02, 0.02, 0.98, 0.40),
+            "speaker": (0.55, 0.28),
             "slot": 0,
+            "pos": (0.78, 0.14),
         },
         {
             "text": "OBJECT MODEL: FASTENER\nPHASE: HELIX\nLOW COST / COMPILE?",
             "kind": "hud",
-            "panel": P(0.08, 0.28, 0.55, 0.48),
+            "panel": P(0.15, 0.40, 0.85, 0.58),
             "slot": 0,
+            "pos": (0.50, 0.50),
         },
         {
             "text": "…você consegue fazer um parafuso?\nSó um. Sem drama.",
             "kind": "speech",
-            "panel": P_FULL,
-            "speaker": (0.55, 0.55),
-            "slot": 1,
+            "panel": P(0.02, 0.60, 0.98, 0.82),
+            "speaker": (0.55, 0.78),
+            "slot": 0,
+            "pos": (0.78, 0.22),
         },
         {
             "text": "…ok.",
             "kind": "speech",
-            "panel": P_FULL,
-            "speaker": (0.55, 0.62),
-            "slot": 2,
+            "panel": P(0.02, 0.82, 0.98, 0.98),
+            "speaker": (0.55, 0.90),
+            "slot": 0,
+            "pos": (0.78, 0.35),
         },
     ],
     22: [
@@ -830,6 +853,28 @@ def place_in_panel(items: list[Placed], w: int, h: int, draw: ImageDraw.ImageDra
                     moved = True
             if not moved:
                 break
+
+        # Head clearance: never sit as a "hat" on the speaker
+        for it in group:
+            if it.kind != "speech" or not it.speaker:
+                continue
+            sx, sy = int(it.speaker[0] * w), int(it.speaker[1] * h)
+            # If balloon is roughly above the head and close, push UP and SIDEWAYS
+            if abs(it.bx - sx) < max(it.bw * 0.55, 0.08 * w) and 0 <= (sy - it.by) < max(it.bh * 1.4, 0.14 * h):
+                # push sideways away from face center
+                if it.bx <= sx:
+                    it.bx = max(px0 + it.bw // 2 + margin, sx - int(0.14 * w) - it.bw // 2)
+                else:
+                    it.bx = min(px1 - it.bw // 2 - margin, sx + int(0.14 * w) + it.bw // 2)
+                # and higher toward panel top
+                it.by = max(py0 + it.bh // 2 + margin, min(it.by, py0 + int(0.14 * ph)))
+            # If bubble body vertically overlaps mouth band, force to top corner
+            if abs(it.bx - sx) < it.bw * 0.45 and abs(it.by - sy) < it.bh * 0.7:
+                prefer_left = sx > (px0 + px1) / 2
+                it.bx = px0 + it.bw // 2 + margin if prefer_left else px1 - it.bw // 2 - margin
+                it.by = py0 + it.bh // 2 + margin + 4
+            it.bx = max(px0 + it.bw // 2 + margin, min(px1 - it.bw // 2 - margin, it.bx))
+            it.by = max(py0 + it.bh // 2 + margin, min(py1 - it.bh // 2 - margin, it.by))
 
 
 def draw_wedge_tail(
