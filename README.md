@@ -36,7 +36,9 @@ Plano fechado + vilão: [`BIBLE/09_TEMPORADA_1.md`](./BIBLE/09_TEMPORADA_1.md)
 | 9 | Cerco | Planejada |
 | 10 | Matéria de Escolha | Finale T1 |
 
-**Vilão T1:** Dr. Cassian Vale (Containment). **Lâmina:** Nex.
+**Vilão T1:** Orin Vael (Pulse Cuff · cura do filho Noé). **Rival T2+:** Noé Vael (Kael tenta curar). **Lâmina:** Nex.
+
+Ficha: [`BIBLE/10_VILAOS_ORIN_NOE.md`](./BIBLE/10_VILAOS_ORIN_NOE.md)
 
 ## Bíblia
 

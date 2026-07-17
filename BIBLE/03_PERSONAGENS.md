@@ -125,26 +125,27 @@ Evitar “fantasma bondoso” que resolve plot.
 
 ## Antagonistas
 
-### DR. CASSIAN VALE — vilão da Temporada 1
-Ficha completa: `09_TEMPORADA_1.md`.
+### ORIN VAEL — vilão da Temporada 1
+Ficha completa: `10_VILAOS_ORIN_NOE.md` + `09_TEMPORADA_1.md`.
 
-- Ex-parceiro de Adrian; Containment / Archive local (Port Haven)
-- Capa: auditor de biossegurança
-- Objetivo: neutralizar Projeto Zero “pelo bem” do mundo e do menino
-- Antagonista moral + estratégico; Nex é a lâmina
+- Pai desesperado; bonito; Pulse Cuff no pulso direito
+- Busca o CORE para “curar” Noé (Síndrome Echo)
+- Usa ORION como ferramenta; inimigo real = o tempo + a ética
+- Morre no finale da T1 (tragédia, não troféu do herói)
+
+### NOÉ VAEL — rival de longo prazo (seed T1)
+- 14 anos; dócil; morrendo
+- “Cura” via CORE o corrompe (monstro clínico + mente de monopólio)
+- T2+: antagonista principal; Kael luta para **curar**, não só vencer
+- Meta precoce: “só um canal”; domínio mundial só se a cura falhar (escala lenta)
 
 ### Agente NEX (codinome ORION)
-- Operador de campo sob Vale
+- Operador de campo (Orin manipula a missão)
 - Objetivo: recuperar ativos sem espetáculo
-- Defeito: subestima “crianças”; excesso de procedimento
-- Medo: Acceleration tomar o caso e queimar a cidade
-- Competente; sobrevive à T1
+- Sobrevive à T1
 
-### Acceleration (facção) — seed T1 / vilão maior T2+
-Não é o boss da T1. Aparece como vazamento / última página.
-
-### Rival científico (humano, não ORION) — TBD T2+
-Pesquisador independente que chega perto de assemblagem por outro caminho.
+### Acceleration (facção) — seed T1 / pressão T2+
+Quer dados Echo+CORE; pode cobiçar Noé pós-“cura”.
 
 ---
 
@@ -154,9 +155,13 @@ Pesquisador independente que chega perto de assemblagem por outro caminho.
 Helena —— amor/proteção —— Kael
 Adrian —— segredo/dívida —— Kael
 Adrian —— amor/mentira —— Helena
+Adrian —— recusa ética —— Orin (passado)
+Orin —— amor absoluto —— Noé
+Orin —— cobiça/uso —— CORE / Kael
 Kael —— amizade frágil —— Ryo
 Kael —— curiosidade —— Maya
-ORION —— caça —— Projeto Zero / Hélice
+Kael —— empatia futura —— Noé
+ORION —— instrumento —— Orin
 ```
 
 Atualizar em `05_CONTINUIDADE.md` após cada capítulo.

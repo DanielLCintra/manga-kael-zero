@@ -6,7 +6,7 @@ Nunca pular de “lab na casa” para “governo mundial” em poucos capítulos
 
 ## Temporada 1 = Revistas #1–#10
 Plano fechado: **`09_TEMPORADA_1.md`**  
-Vilão: **Dr. Cassian Vale** · Escala: Port Haven · Finale: vitória local, lab doméstico perdido.
+Vilão: **Orin Vael** (Pulse Cuff · filho Noé) · Escala: Port Haven · Finale: Orin cai; Noé “curado” (seed T2).
 
 Mapeamento rápido T1:
 - #1–#4 ≈ mistério doméstico / hospital / paranoia (legado Arco 1 + início Arco 2)
