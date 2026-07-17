@@ -5,16 +5,20 @@ Inconsistência visual = erro de produção.
 
 ---
 
-## Estilo geral
+## Estilo geral — LOCK MANHUA
 
-- HQ cinematográfica realista (não chibi, não super-deformed)
-- Influências de tom: thriller sci-fi + drama adolescente contemporâneo
-- Linha limpa, contrastes fortes, pouca “glow mágica”
-- Tecnologia: industrial / lab realista, LEDs frios, metal, vidro, cabos
+- **Estilo único:** manhua / manhwa moderno (linha limpa, cel-shade, personagens estilizados)
+- **Refs obrigatórias:** `REFS/kael/kael_sem_core_*` e `kael_com_core_*`
+- **Proibido:** fotorealismo, cinematic live-action, photobash, pintura hiper-realista
+- **Proibido:** o mesmo personagem **duplicado no mesmo quadro** (dois Kaels, clone, copy-paste)
+- Um Kael por painel (exceto flashback criança vs presente em painéis **separados**)
+- Influências de tom: thriller sci-fi + drama adolescente
+- Linha limpa, contrastes claros
+- Tecnologia: lab limpo, LEDs frios — ainda manhua, não CGI realista
 - **Não** cyberpunk neon-purple padrão
 - **Não** auras de poder mágicas, runas, partículas fantasy
-- **Sim** aura digital **clínica** só em Matéria de Fase Hélice (constructs do CORE) — ver `02_CORE_ZERO.md`
-- **Lettering:** rabicho do balão **sempre** aponta para quem fala — ver `12_LETTERING.md` e `scripts/letter_issue01.py`
+- **Sim** aura digital **clínica** só em Matéria de Fase Hélice
+- **Lettering:** rabicho aponta para quem fala; nunca cobrir rostos — `12_LETTERING.md`
 
 ### Paleta (CSS mental)
 
@@ -134,11 +138,18 @@ Iluminação narrativa:
 ## Prompt base (prefixo obrigatório)
 
 ```text
-Kael Zero graphic novel page, cinematic realistic comic art, clean linework,
-contemporary near-future city (not neon cyberpunk), consistent character designs:
-Kael 16 skinny skater teen messy dark hair casual hoodie, teal clinical CORE tech,
-warm home lighting vs cold lab fluorescents, no magic auras, no fantasy runes,
-molecular assembly VFX only when materializing, Portuguese dialogue lettering space.
+Kael Zero manhua/manhwa comic PAGE, cel-shade, clean ink, flat digital color,
+stylized illustrated backgrounds (NOT photoreal, NOT live-action, NOT photo),
+match REFS/kael character lock: Kael 16 messy cobalt-blue hair, black techwear
+hoodie with electric-blue lining + wolf sleeve logo, teal clinical CORE only when
+materializing, warm home vs cold lab, no magic auras/runes, NO text/speech bubbles
+baked in, headroom for lettering, ONE Kael per panel — NEVER duplicate/clone Kael.
 ```
+
+### QC obrigatório antes de aceitar arte
+1. Estilo manhua em personagens **e** fundos (sem photobash)
+2. Contagem: no máximo **um** Kael por quadro
+3. Sem balões/texto gerados pela IA (lettering só via script)
+4. Refs `REFS/kael/*` respeitadas (cabelo, jaqueta, logo)
 
 Manter esse prefixo (adaptando) em todas as páginas.

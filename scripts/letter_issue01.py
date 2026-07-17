@@ -37,21 +37,21 @@ LETTERING: dict[int, list[dict]] = {
     ],
     2: [
         {
-            "text": "Mãe…?\nO pai tá dormindo?",
-            "kind": "speech",
-            "bubble": (0.28, 0.22),
-            "tail": (0.35, 0.38),
-        },
-        {
             "text": "Vem.\nFica comigo.",
             "kind": "speech",
-            "bubble": (0.70, 0.22),
-            "tail": (0.62, 0.38),
+            "bubble": (0.28, 0.12),
+            "tail": (0.35, 0.28),  # Helena panel1
+        },
+        {
+            "text": "Mãe…?\nO pai tá dormindo?",
+            "kind": "speech",
+            "bubble": (0.72, 0.12),
+            "tail": (0.62, 0.32),  # Kael doorway panel2 ONLY
         },
         {
             "text": "Oficialmente, a causa nunca ficou clara.\nNa vizinhança, alguém murmurou suicídio.\nHelena não discutiu. Só trabalhou.",
             "kind": "narration",
-            "bubble": (0.50, 0.62),
+            "bubble": (0.50, 0.58),
             "tail": None,
         },
         {"text": "SEIS ANOS DEPOIS", "kind": "caption", "bubble": (0.72, 0.88), "tail": None},
@@ -81,20 +81,20 @@ LETTERING: dict[int, list[dict]] = {
         {
             "text": "Kael! Se você se matar antes da prova de física, eu não vou na sua missa.",
             "kind": "speech",
-            "bubble": (0.26, 0.12),
-            "tail": (0.32, 0.28),
+            "bubble": (0.22, 0.08),
+            "tail": (0.28, 0.22),
         },
         {
             "text": "Relaxa. Você ia só pelo lanche depois.",
             "kind": "speech",
-            "bubble": (0.74, 0.16),
-            "tail": (0.66, 0.30),
+            "bubble": (0.78, 0.08),
+            "tail": (0.70, 0.22),
         },
         {
             "text": "…justo.",
             "kind": "speech",
-            "bubble": (0.26, 0.34),
-            "tail": (0.32, 0.40),
+            "bubble": (0.28, 0.26),
+            "tail": (0.32, 0.30),
         },
         {
             "text": "Poucos amigos. Pouca grana. Muita casa vazia.",
@@ -329,43 +329,44 @@ LETTERING: dict[int, list[dict]] = {
             "tail": (0.52, 0.90),
         },
     ],
+    # Layout 3 painéis horizontais (Helena esq / Kael dir) — um Kael por quadro
     19: [
-        {"text": "MANHÃ", "kind": "caption", "bubble": (0.10, 0.035), "tail": None},
+        {"text": "MANHÃ", "kind": "caption", "bubble": (0.10, 0.02), "tail": None},
         {
             "text": "Você tá gelado. Dormiu direito?",
             "kind": "speech",
-            "bubble": (0.24, 0.07),
-            "tail": (0.30, 0.22),
+            "bubble": (0.22, 0.05),
+            "tail": (0.28, 0.16),
         },
         {
             "text": "Mais ou menos. Prova hoje. Cabeça zoada.",
             "kind": "speech",
-            "bubble": (0.76, 0.08),
-            "tail": (0.70, 0.22),
+            "bubble": (0.78, 0.05),
+            "tail": (0.70, 0.16),
         },
         {
             "text": "Sangrou o nariz?",
             "kind": "speech",
-            "bubble": (0.24, 0.30),
-            "tail": (0.30, 0.42),
+            "bubble": (0.22, 0.38),
+            "tail": (0.35, 0.48),
         },
         {
-            "text": "Não.\nSó… dormi mal.",
+            "text": "Não. Só… dormi mal.",
             "kind": "speech",
-            "bubble": (0.76, 0.30),
-            "tail": (0.70, 0.42),
+            "bubble": (0.78, 0.38),
+            "tail": (0.65, 0.48),
         },
         {
-            "text": "Se passar mal, me liga.\nE Kael… eu sei quando você tá escondendo coisa. Sempre soube.",
+            "text": "Se passar mal, me liga. E Kael… eu sei quando você tá escondendo coisa. Sempre soube.",
             "kind": "speech",
-            "bubble": (0.28, 0.58),
-            "tail": (0.32, 0.72),
+            "bubble": (0.30, 0.58),
+            "tail": (0.40, 0.68),
         },
         {
             "text": "Eu sei.",
             "kind": "speech",
-            "bubble": (0.76, 0.62),
-            "tail": (0.70, 0.74),
+            "bubble": (0.70, 0.82),
+            "tail": (0.55, 0.90),
         },
     ],
     20: [
