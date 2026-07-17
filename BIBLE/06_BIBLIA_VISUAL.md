@@ -9,15 +9,18 @@ Inconsistência visual = erro de produção.
 
 - **Estilo único:** manhua / manhwa moderno (linha limpa, cel-shade, personagens estilizados)
 - **Refs obrigatórias:** `REFS/kael/kael_sem_core_*` e `kael_com_core_*`
+- **Âncora de produção:** revistas devem parecer a **mesma série** — usar Issue #1 + refs oficiais como referência visual em todo prompt
 - **Proibido:** fotorealismo, cinematic live-action, photobash, pintura hiper-realista
 - **Proibido:** o mesmo personagem **duplicado no mesmo quadro** (dois Kaels, clone, copy-paste)
 - Um Kael por painel (exceto flashback criança vs presente em painéis **separados**)
 - Influências de tom: thriller sci-fi + drama adolescente
 - Linha limpa, contrastes claros
 - Tecnologia: lab limpo, LEDs frios — ainda manhua, não CGI realista
-- **Não** cyberpunk neon-purple padrão
+- **Não** cyberpunk neon-purple padrão / overload de HUD / molduras sci-fi na capa
 - **Não** auras de poder mágicas, runas, partículas fantasy
 - **Sim** aura digital **clínica** só em Matéria de Fase Hélice
+- **Kael no Arco 1:** techwear preto + forro/logo azul — **nunca** jaleco branco / gi / uniforme aleatório (exceto cena escolar com uniforme quando o roteiro pedir)
+- **Capas:** composição full-bleed estilo Issue #1 (personagem + gancho visual + tipografia `KAEL ZERO` / `#N` / subtítulo) — sem collage de vinhetas
 - **Lettering:** rabicho aponta para quem fala; nunca cobrir rostos — `12_LETTERING.md`
 
 ### Paleta (CSS mental)
