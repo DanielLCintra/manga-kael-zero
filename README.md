@@ -4,7 +4,11 @@ HQ / mangá original de ficção científica, mistério e drama.
 
 ## Ler agora
 
-**[Revista Nº 1 — Eco no Piso](./ISSUES/01/REVISTA_01_ECO_NO_PISO.md)** — origem + primeiro gancho (completa, pronta para ler).
+**PDF mangá ilustrado (23 páginas):** [`ISSUES/01/KAEL_ZERO_01_ECO_NO_PISO.pdf`](./ISSUES/01/KAEL_ZERO_01_ECO_NO_PISO.pdf)
+
+**Roteiro completo:** [Revista Nº 1 — Eco no Piso](./ISSUES/01/REVISTA_01_ECO_NO_PISO.md)
+
+**Páginas soltas:** [`ISSUES/01/pages/`](./ISSUES/01/pages/)
 
 ## Referências visuais do Kael
 

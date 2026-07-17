@@ -2,6 +2,6 @@
 
 Revistas completas, prontas para ler.
 
-| Nº | Título | Arquivo |
-|----|--------|---------|
-| 01 | Eco no Piso | [REVISTA_01_ECO_NO_PISO.md](./01/REVISTA_01_ECO_NO_PISO.md) |
+| Nº | Título | PDF | Roteiro |
+|----|--------|-----|---------|
+| 01 | Eco no Piso | [KAEL_ZERO_01_ECO_NO_PISO.pdf](./01/KAEL_ZERO_01_ECO_NO_PISO.pdf) | [roteiro](./01/REVISTA_01_ECO_NO_PISO.md) |
