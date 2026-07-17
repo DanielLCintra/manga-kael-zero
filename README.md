@@ -2,13 +2,18 @@
 
 HQ / mangá original de ficção científica, mistério e drama.
 
+**Criação, história e roteiro:** Daniel Cintra
+
 ## Ler agora
 
-**PDF mangá ilustrado (23 páginas):** [`ISSUES/01/KAEL_ZERO_01_ECO_NO_PISO.pdf`](./ISSUES/01/KAEL_ZERO_01_ECO_NO_PISO.pdf)
+| Nº | Título | PDF |
+|----|--------|-----|
+| 1 | Eco no Piso | [`ISSUES/01/KAEL_ZERO_01_ECO_NO_PISO.pdf`](./ISSUES/01/KAEL_ZERO_01_ECO_NO_PISO.pdf) |
+| 2 | Protocolo Hélice | [`ISSUES/02/KAEL_ZERO_02_PROTOCOLO_HELICE.pdf`](./ISSUES/02/KAEL_ZERO_02_PROTOCOLO_HELICE.pdf) |
 
-**Roteiro completo:** [Revista Nº 1 — Eco no Piso](./ISSUES/01/REVISTA_01_ECO_NO_PISO.md)
+**Roteiros:** [Revista Nº 1](./ISSUES/01/REVISTA_01_ECO_NO_PISO.md) · [Revista Nº 2](./ISSUES/02/REVISTA_02_PROTOCOLO_HELICE.md)
 
-**Páginas soltas:** [`ISSUES/01/pages/`](./ISSUES/01/pages/)
+**Créditos:** [`CREDITS.md`](./CREDITS.md)
 
 ## Referências visuais do Kael
 
@@ -26,7 +31,7 @@ Plano fechado + vilão: [`BIBLE/09_TEMPORADA_1.md`](./BIBLE/09_TEMPORADA_1.md)
 | # | Título | Status |
 |---|--------|--------|
 | 1 | Eco no Piso | Feita (PDF) |
-| 2 | Protocolo Hélice | Planejada |
+| 2 | Protocolo Hélice | Feita (PDF) |
 | 3 | Ruído na Rede | Planejada |
 | 4 | Sinais Vitais | Planejada |
 | 5 | Quase Herói | Planejada |
@@ -42,4 +47,4 @@ Ficha: [`BIBLE/10_VILAOS_ORIN_NOE.md`](./BIBLE/10_VILAOS_ORIN_NOE.md)
 
 ## Bíblia
 
-Cânone em [`BIBLE/`](./BIBLE/). Continuidade atualizada após a Revista #1.
+Cânone em [`BIBLE/`](./BIBLE/). Continuidade atualizada após a Revista #2.

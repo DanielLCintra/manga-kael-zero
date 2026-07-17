@@ -2,6 +2,7 @@
 ## Revista Nº 1 — ECO NO PISO  
 ### (v1.3 — abertura para leitor novo + lettering profissional)
 
+**Autor:** Daniel Cintra  
 **Páginas:** 24 + capa  
 **Princípio:** o leitor não sabe nada; cada página ensina uma peça.  
 **Lettering:** balões no topo / gutter; **nunca** cobrem rostos (`12_LETTERING.md`).

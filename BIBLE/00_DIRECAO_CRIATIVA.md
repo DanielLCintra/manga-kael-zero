@@ -1,6 +1,7 @@
 # KAEL ZERO — Direção Criativa (Decisões Canônicas)
 
-**Status:** Documento vivo. Qualquer alteração aqui sobrescreve ideias soltas em chat.
+**Criador / autor:** Daniel Cintra  
+**Status:** Documento vivo. Qualquer alteração aqui sobrescreve ideias soltas em chat.  
 **Papel deste arquivo:** Guardião da qualidade da franquia. Não aceitar ideias automaticamente.
 
 ---

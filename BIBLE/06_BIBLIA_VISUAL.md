@@ -21,6 +21,7 @@ Inconsistência visual = erro de produção.
 - **Sim** aura digital **clínica** só em Matéria de Fase Hélice
 - **Kael no Arco 1:** techwear preto + forro/logo azul — **nunca** jaleco branco / gi / uniforme aleatório (exceto cena escolar com uniforme quando o roteiro pedir)
 - **Capas:** composição full-bleed estilo Issue #1 (personagem + gancho visual + tipografia `KAEL ZERO` / `#N` / subtítulo) — sem collage de vinhetas
+- **Crédito de autor na capa (obrigatório):** `por Daniel Cintra` — usar `scripts/stamp_cover_credit.py`
 - **Lettering:** rabicho aponta para quem fala; nunca cobrir rostos — `12_LETTERING.md`
 
 ### Paleta (CSS mental)

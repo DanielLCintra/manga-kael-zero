@@ -2,6 +2,7 @@
 ## Revista Nº 2 — PROTOCOLO HÉLICE  
 ### (v1.0 — estudo, custo, primeira sombra de Noé/Orin)
 
+**Autor:** Daniel Cintra  
 **Páginas:** 24 + capa  
 **Continua de:** Nº 1 — Eco no Piso  
 **Princípio:** Kael tenta entender a herança do pai; o mundo começa a notar.  

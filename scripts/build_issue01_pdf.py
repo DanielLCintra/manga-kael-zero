@@ -38,8 +38,9 @@ def main() -> None:
 
     c = canvas.Canvas(str(OUT), pagesize=(PAGE_W, PAGE_H))
     c.setTitle("KAEL ZERO — Revista Nº 1: Eco no Piso")
-    c.setAuthor("Kael Zero")
-    c.setSubject("Mangá / HQ — origem")
+    c.setAuthor("Daniel Cintra")
+    c.setCreator("Daniel Cintra")
+    c.setSubject("Mangá / HQ — origem · história e roteiro de Daniel Cintra")
 
     for path in files:
         im = Image.open(path).convert("RGB")

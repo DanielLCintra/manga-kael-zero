@@ -39,6 +39,10 @@ def main() -> None:
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(OUT), pagesize=(PAGE_W, PAGE_H))
+    c.setTitle("KAEL ZERO — Revista Nº 2: Protocolo Hélice")
+    c.setAuthor("Daniel Cintra")
+    c.setCreator("Daniel Cintra")
+    c.setSubject("Mangá / HQ — Protocolo Hélice · história e roteiro de Daniel Cintra")
     for f in files:
         im = Image.open(f).convert("RGB").resize((900, 1350), Image.Resampling.LANCZOS)
         buf = io.BytesIO()
