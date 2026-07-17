@@ -11,7 +11,7 @@ Se um fato não está aqui, não é cânone estável.
 |-------|-------|
 | Título | Kael Zero |
 | Formato | HQ / Mangá |
-| Capítulo atual | Revista Nº 1 — Eco no Piso |
+| Capítulo atual | Revista Nº 1 — Eco no Piso (roteiro v1.1 amarrado) |
 | Arco atual | 1 — Eco no Piso |
 | Tempo narrativo | ≈ 6 anos após morte de Adrian; ~24h da descoberta |
 | Idade de Kael | 16 |
@@ -34,7 +34,7 @@ Se um fato não está aqui, não é cânone estável.
 | Estratégia | baixa em combate | — |
 | Complexidade max | sólidos simples | Peça conhecida (parafuso) |
 
-**Builds conhecidas:** parafuso de truck (1)  
+**Builds conhecidas:** parafuso de truck em Fase Hélice (1) — digital-físico, estabilidade ~84%  
 **Módulos:** nenhum  
 **Sintomas acumulados:** epistaxe, cefaleia, febre suspeita, glitch visual  
 **Segredos que Kael guarda:** lab; CORE; mensagem do pai; materialização  
@@ -73,7 +73,8 @@ Se um fato não está aqui, não é cânone estável.
 | Existência conhecida pelo público | Quase nula |
 | Contato com Kael | Nenhum (Kael não sabe) |
 | Alerta Hélice | Flag 41% — PASSIVE WATCH — Sector 7B |
-| Agentes em cena | Vozes off; sem rosto |
+| Agentes em cena | Vozes off; Pulse Cuff (Orin) sem rosto |
+| Signal leak | DETECTED no instante do parafuso |
 
 ---
 

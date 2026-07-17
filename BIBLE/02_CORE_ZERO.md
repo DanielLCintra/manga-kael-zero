@@ -49,16 +49,21 @@ Estado coerente em que massa, dureza, momento e forma são sustentados por uma *
 - **Parece digital:** translúcida teal/ciano, circuit-glass, wireframe residual, brilho clínico — **aura digital permanente** nos constructs maduros  
 - **Não é magia:** ORION pode detectar assinatura espectral; sensores veem “anomalia de fase”
 
-### Por que não “vira metal normal”
-Adrian descobriu (notas tardias): a fase Hélice é **mais estável para o CORE** do que matéria mundana plena.  
-Forçar render 100% “opaco/normal” custa mais e falha mais (ver parafuso #1 @ 84%).
+### Por que NÃO vira matéria mundana “completa”
+**Decisão canônica (trava visual da franquia):**  
+Constructs do CORE **sempre** permanecem em Fase Hélice — físicos, com massa e volume, porém com **aspecto digital** (translúcido teal/ciano, lattice, circuit-glass).
+
+Adrian descobriu: forçar render 100% opaco/mundano é instável, caro e quase sempre falha.  
+O CORE não “imprime plástico e aço normais”. Ele instancia **matéria informacional coerente**.
 
 | Nível de domínio | Aparência típica | Notas |
 |------------------|------------------|-------|
-| Iniciante (T1) | Quase sólido mundano, opaco, falhas | Parafuso; ferramentas |
-| Intermediário | Híbrido: sólido + veios digitais | Defesa / armas sob coerção |
-| Avançado | Aura digital plena, ainda física | Look das refs com CORE |
-| Máster | Constructs complexos sustentados; biblioteca viva | “Qualquer coisa” *modelável* |
+| Iniciante (T1) | Aura digital clara + forma simples; estabilidade baixa | **Parafuso #1** — já digital-físico, 84% |
+| Intermediário | Lattice mais limpo, holds mais longos | Ferramentas / defesa |
+| Avançado | Aura digital plena, constructs complexos | Look das refs com CORE |
+| Máster | Biblioteca viva; “qualquer coisa” modelável | Sempre Fase Hélice — nunca “metal de loja” |
+
+**Proibido em arte:** construct do Kael que pareça parafuso/arma/escudo 100% realista sem assinatura digital.
 
 ### Manutenção
 Constructs avançados podem exigir **custo contínuo** enquanto existirem (hold).  
@@ -188,11 +193,11 @@ Toda build:
 
 | Fase | O que | Modo | Visual |
 |------|-------|------|--------|
-| T1 início | Peças, ferramentas | Soft | Quase mundano |
-| T1 meio/fim | Defesa, híbridos | Soft→Hard proto | Veios digitais |
-| T2 | Armas/dispositivos salvos | Hard + Biblioteca | Fase Hélice clara |
-| T3 | Drones, armadura parcial | Hard + módulos | Aura digital plena |
-| T4+ | Estruturas, veículos, “qualquer coisa” modelável | Domínio | Assinatura máxima |
+| T1 início | Peças, ferramentas | Soft | Fase Hélice (simples, instável) |
+| T1 meio/fim | Defesa, híbridos | Soft→Hard proto | Fase Hélice mais limpa |
+| T2 | Armas/dispositivos salvos | Hard + Biblioteca | Aura digital plena |
+| T3 | Drones, armadura parcial | Hard + módulos | Constructs complexos |
+| T4+ | Estruturas, veículos, “qualquer coisa” modelável | Domínio | Assinatura máxima — sempre digital-físico |
 
 **Regra de compreensão:** sem modelo, sem build.  
 Copiar exige estudo. Inventar exige projeto.

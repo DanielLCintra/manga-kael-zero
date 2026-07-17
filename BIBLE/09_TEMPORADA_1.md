@@ -140,10 +140,10 @@ Escala lenta — ver `02_CORE_ZERO.md` (Matéria Hélice / Soft vs Hard Compile)
 
 | Fase T1 | O que | Visual |
 |---------|-------|--------|
-| #1–#2 | Soft Compile: peças, ferramentas | Quase mundano |
-| #3–#5 | Soft defesa / fuga | Veios digitais começam |
-| #6–#8 | Primeiros projetos salvos (Biblioteca proto) | Híbrido |
-| #9–#10 | Forge proto + sync limitada | Fase Hélice parcial |
+| #1–#2 | Soft Compile: peças, ferramentas | Fase Hélice desde o 1º objeto |
+| #3–#5 | Soft defesa / fuga | Lattice mais estável |
+| #6–#8 | Primeiros projetos salvos (Biblioteca proto) | Aura digital plena em itens maiores |
+| #9–#10 | Forge proto + sync limitada | Constructs complexos ainda limitados |
 
 **Sem** armadura/drones.  
 **Sem** “cria qualquer coisa” ainda — isso é teto de franquia.  

@@ -77,8 +77,8 @@ Lab = frio.
 - Cilindro de vidro + metal, instrumentação realista
 - Núcleo interno: geometria clara (esfera/anel) com luz **teal** estável, não explosiva
 - Interface HUD: tipografia mono, logs, wireframes — UI de engenharia
-- Materialização iniciante: vapor/partículas → sólido quase mundano
-- **Matéria de Fase Hélice (domínio):** constructs físicos com **aura digital permanente** — translúcidos teal/ciano, circuit-glass, lattice visível; cortam/bloqueiam de verdade
+- Materialização: wireframe → lattice → **sólido de Fase Hélice** (desde o 1º objeto)
+- **Nunca** render mundano completo: constructs sempre com **aura digital** — translúcidos teal/ciano, circuit-glass, lattice; pesam, ocupam espaço, cortam/bloqueiam de verdade
 - **Não** é Lanterna Verde: sem anel, sem vontade verde, sem glow mágico genérico — é compilação informacional
 - Hold dissolvendo: construct desfaz em vapor de dados / fragmentação de lattice
 - Refs futuras de combate: `REFS/kael/kael_com_core_*` (espada/escudo = Hard Compile visual alvo)
