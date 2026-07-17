@@ -4,12 +4,21 @@
 Escala sobe **depois** de consequências locais.  
 Nunca pular de “lab na casa” para “governo mundial” em poucos capítulos.
 
+## Temporada 1 = Revistas #1–#10
+Plano fechado: **`09_TEMPORADA_1.md`**  
+Vilão: **Dr. Cassian Vale** · Escala: Port Haven · Finale: vitória local, lab doméstico perdido.
+
+Mapeamento rápido T1:
+- #1–#4 ≈ mistério doméstico / hospital / paranoia (legado Arco 1 + início Arco 2)
+- #5–#7 ≈ perseguição + oferta do vilão + círculo de confiança
+- #8–#10 ≈ cerco + confronto + fechamento de temporada
+
 ---
 
 ## ARCO 1 — Eco no Piso
 **Tom:** mistério doméstico, coming-of-age, uncanny tech  
 **Escala:** casa, escola, hospital  
-**Páginas-alvo (flexível):** arco médio (dezenas de caps, não fillér infinito)
+**Revistas T1:** #1 (feito), #2–#4 (transição)
 
 ### Beats obrigatórios
 1. Vida normal de Kael (skate, escola, mãe ausente por plantão)

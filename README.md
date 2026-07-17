@@ -19,6 +19,25 @@ HQ / mangá original de ficção científica, mistério e drama.
 | Com CORE (full) | [`REFS/kael/kael_com_core_fullbody.png`](./REFS/kael/kael_com_core_fullbody.png) |
 | Com CORE (cena) | [`REFS/kael/kael_com_core_cena.png`](./REFS/kael/kael_com_core_cena.png) |
 
+## Temporada 1 (10 revistas)
+
+Plano fechado + vilão: [`BIBLE/09_TEMPORADA_1.md`](./BIBLE/09_TEMPORADA_1.md)
+
+| # | Título | Status |
+|---|--------|--------|
+| 1 | Eco no Piso | Feita (PDF) |
+| 2 | Protocolo Hélice | Planejada |
+| 3 | Ruído na Rede | Planejada |
+| 4 | Sinais Vitais | Planejada |
+| 5 | Quase Herói | Planejada |
+| 6 | Eu Tentei de Tudo | Midpoint |
+| 7 | Círculo | Planejada |
+| 8 | Custo de Compilação | Planejada |
+| 9 | Cerco | Planejada |
+| 10 | Matéria de Escolha | Finale T1 |
+
+**Vilão T1:** Dr. Cassian Vale (Containment). **Lâmina:** Nex.
+
 ## Bíblia
 
 Cânone em [`BIBLE/`](./BIBLE/). Continuidade atualizada após a Revista #1.

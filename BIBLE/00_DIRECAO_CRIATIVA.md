@@ -157,5 +157,6 @@ um filho herda não um poder — herda o **erro, o sonho e a dívida** do pai.
 | `06_BIBLIA_VISUAL.md` | Consistência para prompts de HQ |
 | `07_FORMATO_CAPITULO.md` | Template obrigatório de capítulo |
 | `08_MISTERIOS.md` | Plantas, revelações, status |
+| `09_TEMPORADA_1.md` | Plano das 10 revistas + vilão Vale |
 
 Quando o usuário pedir um capítulo: ler estes arquivos **antes** de escrever.

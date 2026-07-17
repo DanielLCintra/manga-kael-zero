@@ -123,21 +123,28 @@ Evitar “fantasma bondoso” que resolve plot.
 
 ---
 
-## Antagonistas seed
+## Antagonistas
 
-### Agente “NEX” (codinome ORION — nome real TBD)
-- Operador de campo da divisão Archive / Containment
-- Objetivo: recuperar ativos Projeto Zero sem espetáculo
+### DR. CASSIAN VALE — vilão da Temporada 1
+Ficha completa: `09_TEMPORADA_1.md`.
+
+- Ex-parceiro de Adrian; Containment / Archive local (Port Haven)
+- Capa: auditor de biossegurança
+- Objetivo: neutralizar Projeto Zero “pelo bem” do mundo e do menino
+- Antagonista moral + estratégico; Nex é a lâmina
+
+### Agente NEX (codinome ORION)
+- Operador de campo sob Vale
+- Objetivo: recuperar ativos sem espetáculo
 - Defeito: subestima “crianças”; excesso de procedimento
 - Medo: Acceleration tomar o caso e queimar a cidade
-- Deve ser competente, não monólogo-villain
+- Competente; sobrevive à T1
 
-### Diretora ORION (facção) — TBD
-Revelação Arco 3+. Nunca mostrar cedo demais o chefe final.
+### Acceleration (facção) — seed T1 / vilão maior T2+
+Não é o boss da T1. Aparece como vazamento / última página.
 
-### Rival científico (humano, não ORION) — TBD
-Pesquisador independente que chega perto de assemblagem por outro caminho.  
-Serve para provar: o mundo não gira só em torno de Kael.
+### Rival científico (humano, não ORION) — TBD T2+
+Pesquisador independente que chega perto de assemblagem por outro caminho.
 
 ---
 
