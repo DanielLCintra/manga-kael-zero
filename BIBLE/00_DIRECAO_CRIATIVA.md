@@ -160,5 +160,6 @@ um filho herda não um poder — herda o **erro, o sonho e a dívida** do pai.
 | `08_MISTERIOS.md` | Plantas, revelações, status |
 | `09_TEMPORADA_1.md` | Plano das 10 revistas |
 | `10_VILAOS_ORIN_NOE.md` | Orin Vael, Noé Vael, Pulse Cuff, Echo |
+| `11_CAMADA_MISTERIO.md` | Motores Coben / pop — mentiras domésticas |
 
 Quando o usuário pedir um capítulo: ler estes arquivos **antes** de escrever.

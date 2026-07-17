@@ -26,9 +26,14 @@ Kael herda a máquina que matou o pai — e atrai Orin Vael, um homem disposto a
 ### Pergunta secundária (Kael/Helena)
 Dá para proteger mentindo — ou a mentira é o que destrói?
 
+### Camada mistério (Coben)
+Toda revista: 1 mentira doméstica + 1 avanço sci-fi.  
+Motores canônicos: Segunda Página, 72 Horas, Benfeitor, Quinn, Tip humano — `11_CAMADA_MISTERIO.md`.
+
 ### Tema
 Amor absoluto sem ética = monstro com boas intenções.  
-Espelho: Adrian se calou para proteger; Orin grita e rouba para salvar.
+Espelho: Adrian se calou para proteger; Orin grita e rouba para salvar.  
+Em Port Haven, as pessoas não desaparecem — elas são **explicadas**.
 
 ### O que FECHA na #10
 - Destino de **Orin Vael** (morte / queda)  
