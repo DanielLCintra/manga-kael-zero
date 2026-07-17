@@ -1,507 +1,653 @@
 #!/usr/bin/env python3
 """
 Lettering profissional — Kael Zero #1 (24 págs).
-Regras: balões pequenos, ancorados no TOPO, nunca cobrem rostos;
-rabicho aponta para a boca; ordem L→R / T→B (Shooter / lettering clássico).
+
+Garantias do motor:
+1. Sempre parte de `pages_clean/` (nunca re-letter em cima de balão).
+2. Cada fala declara o PAINEL (bounds) — balão fica preso na zona superior do painel.
+3. Rabicho = cunha curta; nunca atravessa gutter nem outro personagem distante.
+4. Colisão entre balões no mesmo painel é resolvida automaticamente.
+5. QC no fim: falha se balões saírem do painel ou se sobrepuserem demais.
 """
 from __future__ import annotations
 
+import math
+import sys
 import textwrap
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
+CLEAN = ROOT / "ISSUES" / "01" / "pages_clean"
 PAGES = ROOT / "ISSUES" / "01" / "pages"
 OUT = ROOT / "ISSUES" / "01" / "pages_lettered"
 NUM_PAGES = 24
 
-# bubble = centro do balão (fracão); tail = boca do falante (fracão)
-# Para speech: bubble.y deve ficar ACIMA da cabeça (tipicamente < tail.y - 0.08)
+# ---------------------------------------------------------------------------
+# Dados: cada item tem panel=(x0,y0,x1,y1) em fração da página.
+# speaker = boca do falante (fração página). slot = ordem de leitura no painel.
+# ---------------------------------------------------------------------------
+
+# Helpers de layout frequentes
+P_FULL = (0.02, 0.02, 0.98, 0.98)
+
+
+def P(x0, y0, x1, y1):
+    return (x0, y0, x1, y1)
+
 
 LETTERING: dict[int, list[dict]] = {
     1: [
-        {"text": "PORT HAVEN", "kind": "caption", "bubble": (0.18, 0.06), "tail": None},
+        # 2x3: TL city | TR Helena | ML door | MR Kael sleep | BL hand | BR paper
+        {"text": "PORT HAVEN", "kind": "caption", "panel": P(0.02, 0.02, 0.49, 0.34), "slot": 0},
         {
             "text": "Adrian?\nCheguei cedo hoje.",
             "kind": "speech",
-            "bubble": (0.55, 0.28),
-            "tail": (0.48, 0.40),
+            "panel": P(0.51, 0.02, 0.98, 0.34),
+            "speaker": (0.74, 0.22),
+            "slot": 0,
         },
         {
             "text": "Eu tentei de tudo...",
             "kind": "caption",
-            "bubble": (0.50, 0.88),
-            "tail": None,
+            "panel": P(0.02, 0.68, 0.49, 0.98),
+            "slot": 0,
+            "anchor": "bottom",
         },
     ],
     2: [
+        # 2x2 collage
         {
             "text": "Vem.\nFica comigo.",
             "kind": "speech",
-            "bubble": (0.28, 0.12),
-            "tail": (0.35, 0.28),  # Helena panel1
+            "panel": P(0.02, 0.02, 0.49, 0.49),
+            "speaker": (0.28, 0.32),
+            "slot": 0,
         },
         {
             "text": "Mãe…?\nO pai tá dormindo?",
             "kind": "speech",
-            "bubble": (0.72, 0.12),
-            "tail": (0.62, 0.32),  # Kael doorway panel2 ONLY
+            "panel": P(0.51, 0.02, 0.98, 0.49),
+            "speaker": (0.72, 0.28),
+            "slot": 0,
         },
         {
             "text": "Oficialmente, a causa nunca ficou clara.\nNa vizinhança, alguém murmurou suicídio.\nHelena não discutiu. Só trabalhou.",
             "kind": "narration",
-            "bubble": (0.50, 0.58),
-            "tail": None,
+            "panel": P(0.02, 0.51, 0.49, 0.98),
+            "slot": 0,
+            "anchor": "top",
         },
-        {"text": "SEIS ANOS DEPOIS", "kind": "caption", "bubble": (0.72, 0.88), "tail": None},
+        {
+            "text": "SEIS ANOS DEPOIS",
+            "kind": "caption",
+            "panel": P(0.51, 0.51, 0.98, 0.98),
+            "slot": 0,
+            "anchor": "bottom",
+        },
     ],
     3: [
+        # top | mid L/R | bottom
         {
             "text": "Kael Zero tem dezesseis anos.\nAnda de skate. Conserta o que quebra.\nNão é popular. Não treina luta. Não é herói.",
             "kind": "narration",
-            "bubble": (0.50, 0.14),
-            "tail": None,
+            "panel": P(0.02, 0.02, 0.98, 0.36),
+            "slot": 0,
+            "anchor": "top",
         },
-        {"text": "KRRRASH", "kind": "sfx", "bubble": (0.78, 0.36), "tail": None},
+        {"text": "KRRRASH", "kind": "sfx", "panel": P(0.02, 0.38, 0.49, 0.62), "slot": 0},
         {
             "text": "Ai…\nTá. Quase.",
             "kind": "speech",
-            "bubble": (0.78, 0.48),
-            "tail": (0.55, 0.58),
+            "panel": P(0.51, 0.38, 0.98, 0.62),
+            "speaker": (0.72, 0.54),
+            "slot": 0,
         },
         {
             "text": "Beleza. Mais um dia sem incendiar nada.",
             "kind": "speech",
-            "bubble": (0.70, 0.78),
-            "tail": (0.55, 0.88),
+            "panel": P(0.02, 0.64, 0.98, 0.98),
+            "speaker": (0.55, 0.82),
+            "slot": 0,
         },
     ],
     4: [
+        # 3 horizontal
         {
             "text": "Kael! Se você se matar antes da prova de física, eu não vou na sua missa.",
             "kind": "speech",
-            "bubble": (0.22, 0.08),
-            "tail": (0.28, 0.22),
+            "panel": P(0.02, 0.02, 0.98, 0.34),
+            "speaker": (0.28, 0.22),
+            "slot": 0,
         },
         {
             "text": "Relaxa. Você ia só pelo lanche depois.",
             "kind": "speech",
-            "bubble": (0.78, 0.08),
-            "tail": (0.70, 0.22),
+            "panel": P(0.02, 0.02, 0.98, 0.34),
+            "speaker": (0.72, 0.22),
+            "slot": 1,
         },
         {
             "text": "…justo.",
             "kind": "speech",
-            "bubble": (0.28, 0.26),
-            "tail": (0.32, 0.30),
+            "panel": P(0.02, 0.02, 0.98, 0.34),
+            "speaker": (0.28, 0.26),
+            "slot": 2,
         },
         {
             "text": "Poucos amigos. Pouca grana. Muita casa vazia.",
             "kind": "narration",
-            "bubble": (0.50, 0.58),
-            "tail": None,
+            "panel": P(0.02, 0.36, 0.98, 0.66),
+            "slot": 0,
+            "anchor": "bottom",
         },
     ],
     5: [
+        # Painéis reais da arte; pos = âncora do balão dentro do painel
         {
-            "text": "Plantão esticou de novo. Tem macarrão na geladeira. Por favor, não desmonta a torradeira hoje. Te amo.",
+            "text": "Plantão esticou de novo. Tem macarrão na geladeira. Não desmonta a torradeira. Te amo.",
             "kind": "phone",
-            "bubble": (0.55, 0.16),
-            "tail": None,
+            "panel": P(0.02, 0.02, 0.98, 0.58),
+            "slot": 0,
             "label": "HELENA",
+            "pos": (0.55, 0.10),
         },
         {
             "text": "Ela me conhece demais. Assustador.",
             "kind": "speech",
-            "bubble": (0.74, 0.36),
-            "tail": (0.58, 0.46),
+            "panel": P(0.02, 0.02, 0.98, 0.58),
+            "speaker": (0.22, 0.30),
+            "slot": 1,
+            "pos": (0.18, 0.12),
         },
         {
             "text": "Skate park depois da última?",
             "kind": "speech",
-            "bubble": (0.26, 0.52),
-            "tail": (0.32, 0.64),
+            "panel": P(0.02, 0.02, 0.98, 0.58),
+            "speaker": (0.58, 0.28),
+            "slot": 2,
+            "pos": (0.82, 0.12),
         },
         {
             "text": "Hoje não dá. Casa vazia… se eu for, acabo abrindo alguma coisa que não devia.",
             "kind": "speech",
-            "bubble": (0.74, 0.54),
-            "tail": (0.64, 0.66),
+            "panel": P(0.02, 0.02, 0.98, 0.58),
+            "speaker": (0.22, 0.34),
+            "slot": 3,
+            "pos": (0.42, 0.72),
         },
         {
             "text": "Tipo a torradeira.",
             "kind": "speech",
-            "bubble": (0.26, 0.74),
-            "tail": (0.32, 0.78),
+            "panel": P(0.02, 0.60, 0.49, 0.98),
+            "speaker": (0.34, 0.72),
+            "slot": 0,
+            "pos": (0.85, 0.12),
         },
         {
             "text": "Tipo a torradeira.",
             "kind": "speech",
-            "bubble": (0.74, 0.74),
-            "tail": (0.64, 0.78),
+            "panel": P(0.51, 0.60, 0.98, 0.98),
+            "speaker": (0.72, 0.78),
+            "slot": 0,
+            "pos": (0.18, 0.12),
         },
         {
             "text": "Helena é médica. Trabalha demais.\nDesde que Adrian morreu, a casa aprendeu a ficar em silêncio.",
             "kind": "narration",
-            "bubble": (0.50, 0.92),
-            "tail": None,
+            "panel": P(0.02, 0.60, 0.49, 0.98),
+            "slot": 1,
+            "pos": (0.50, 0.88),
         },
     ],
     6: [
         {
             "text": "Energia não some. Ela só muda de forma. Anotem isso antes que eu cobrem na prova.",
             "kind": "speech",
-            "bubble": (0.50, 0.10),
-            "tail": (0.45, 0.26),
+            "panel": P(0.02, 0.02, 0.98, 0.36),
+            "speaker": (0.45, 0.22),
+            "slot": 0,
         },
-        {"text": "DEPOIS DA AULA", "kind": "caption", "bubble": (0.78, 0.90), "tail": None},
+        {
+            "text": "DEPOIS DA AULA",
+            "kind": "caption",
+            "panel": P(0.51, 0.70, 0.98, 0.98),
+            "slot": 0,
+            "anchor": "bottom",
+        },
     ],
     7: [
         {
             "text": "…mais um dia de casa sozinha. Que novidade.",
             "kind": "speech",
-            "bubble": (0.55, 0.28),
-            "tail": (0.48, 0.42),
+            "panel": P(0.02, 0.02, 0.98, 0.34),
+            "speaker": (0.55, 0.22),
+            "slot": 0,
         },
         {
             "text": "Come. Dorme. Existe.\n— Mãe",
             "kind": "caption",
-            "bubble": (0.50, 0.58),
-            "tail": None,
+            "panel": P(0.02, 0.52, 0.40, 0.72),
+            "slot": 0,
         },
         {
             "text": "Sim, senhora.",
             "kind": "speech",
-            "bubble": (0.72, 0.76),
-            "tail": (0.55, 0.86),
+            "panel": P(0.42, 0.36, 0.98, 0.98),
+            "speaker": (0.70, 0.70),
+            "slot": 0,
         },
     ],
     8: [
         {
             "text": "Não foi a geladeira.",
             "kind": "speech",
-            "bubble": (0.72, 0.40),
-            "tail": (0.52, 0.52),
+            "panel": P(0.02, 0.02, 0.98, 0.48),
+            "speaker": (0.55, 0.30),
+            "slot": 0,
         },
-        {"text": "VMM—tik—VMM", "kind": "sfx", "bubble": (0.50, 0.70), "tail": None},
+        {"text": "VMM—tik—VMM", "kind": "sfx", "panel": P(0.02, 0.50, 0.49, 0.98), "slot": 0},
         {
             "text": "…oi?",
             "kind": "speech",
-            "bubble": (0.74, 0.82),
-            "tail": (0.55, 0.90),
+            "panel": P(0.51, 0.50, 0.98, 0.98),
+            "speaker": (0.72, 0.78),
+            "slot": 0,
         },
     ],
     9: [
         {
             "text": "Se for rato, a gente negocia.",
             "kind": "speech",
-            "bubble": (0.68, 0.10),
-            "tail": (0.50, 0.24),
+            "panel": P(0.02, 0.02, 0.98, 0.34),
+            "speaker": (0.50, 0.22),
+            "slot": 0,
         },
         {
             "text": "Manutenção… que nunca ninguém manteve.",
             "kind": "speech",
-            "bubble": (0.55, 0.78),
-            "tail": (0.48, 0.90),
+            "panel": P(0.02, 0.36, 0.58, 0.98),
+            "speaker": (0.30, 0.70),
+            "slot": 0,
         },
     ],
     10: [
         {
             "text": "Tá.\nIsso aqui não é caixa de luz.",
             "kind": "speech",
-            "bubble": (0.68, 0.28),
-            "tail": (0.48, 0.42),
+            "panel": P(0.51, 0.36, 0.98, 0.62),
+            "speaker": (0.72, 0.52),
+            "slot": 0,
         },
     ],
     11: [
         {
             "text": "…pai?",
             "kind": "speech",
-            "bubble": (0.28, 0.42),
-            "tail": (0.35, 0.58),
+            "panel": P(0.02, 0.36, 0.49, 0.62),
+            "speaker": (0.28, 0.52),
+            "slot": 0,
         },
         {
             "text": "Seis anos. Embaixo da casa dele.\nO silêncio tinha endereço.",
             "kind": "narration",
-            "bubble": (0.50, 0.90),
-            "tail": None,
+            "panel": P(0.02, 0.64, 0.98, 0.98),
+            "slot": 0,
+            "anchor": "bottom",
         },
     ],
     12: [
         {
             "text": "Se você está lendo isto, o isolamento falhou.\nNão toque no cilindro sem ler o Protocolo Hélice.\n\nSe o leitor for Kael…\ndesculpa.\n\nEu tentei de tudo.",
             "kind": "caption",
-            "bubble": (0.50, 0.40),
-            "tail": None,
+            "panel": P(0.08, 0.18, 0.92, 0.72),
+            "slot": 0,
         },
         {
             "text": "…o quê que você tentou?",
             "kind": "speech",
-            "bubble": (0.55, 0.86),
-            "tail": (0.50, 0.92),
+            "panel": P(0.02, 0.74, 0.98, 0.98),
+            "speaker": (0.50, 0.90),
+            "slot": 0,
         },
     ],
     13: [
         {
             "text": "Um de doze.\nSério, pai?",
             "kind": "speech",
-            "bubble": (0.72, 0.12),
-            "tail": (0.55, 0.26),
+            "panel": P(0.02, 0.02, 0.98, 0.40),
+            "speaker": (0.55, 0.26),
+            "slot": 0,
         },
         {
             "text": "Eu só… quero ver.\nNão vou mexer. Só ver.",
             "kind": "speech",
-            "bubble": (0.72, 0.62),
-            "tail": (0.52, 0.76),
+            "panel": P(0.02, 0.42, 0.98, 0.98),
+            "speaker": (0.55, 0.72),
+            "slot": 0,
         },
     ],
     14: [
         {
             "text": "Ei— espera— eu não pedi—",
             "kind": "speech",
-            "bubble": (0.72, 0.42),
-            "tail": (0.55, 0.58),
+            "panel": P_FULL,
+            "speaker": (0.55, 0.55),
+            "slot": 0,
         },
     ],
     15: [
         {
             "text": "Para! Desliga!",
             "kind": "speech",
-            "bubble": (0.72, 0.52),
-            "tail": (0.52, 0.68),
+            "panel": P_FULL,
+            "speaker": (0.55, 0.60),
+            "slot": 0,
         },
     ],
     16: [
         {
             "text": "Legal.\nAchei o porão secreto do meu pai e quase desmaiei. Dia normal.",
             "kind": "speech",
-            "bubble": (0.55, 0.12),
-            "tail": (0.45, 0.28),
+            "panel": P(0.02, 0.02, 0.98, 0.48),
+            "speaker": (0.50, 0.28),
+            "slot": 0,
         },
         {
             "text": "A gente… termina essa conversa depois.",
             "kind": "speech",
-            "bubble": (0.55, 0.52),
-            "tail": (0.48, 0.66),
+            "panel": P(0.02, 0.50, 0.98, 0.98),
+            "speaker": (0.50, 0.70),
+            "slot": 0,
         },
     ],
     17: [
         {
             "text": "Tudo bem aí?",
             "kind": "phone",
-            "bubble": (0.55, 0.28),
-            "tail": None,
+            "panel": P(0.15, 0.18, 0.85, 0.40),
+            "slot": 0,
             "label": "HELENA",
         },
         {
             "text": "Tô bem. Macarrão tava bom.",
             "kind": "phone",
-            "bubble": (0.55, 0.48),
-            "tail": None,
+            "panel": P(0.15, 0.42, 0.85, 0.62),
+            "slot": 0,
             "label": "KAEL",
         },
         {
             "text": "…desculpa, mãe.",
             "kind": "speech",
-            "bubble": (0.70, 0.78),
-            "tail": (0.52, 0.88),
+            "panel": P(0.02, 0.64, 0.98, 0.98),
+            "speaker": (0.55, 0.85),
+            "slot": 0,
         },
     ],
     18: [
-        {"text": "MESMA NOITE", "kind": "caption", "bubble": (0.18, 0.06), "tail": None},
+        {"text": "MESMA NOITE", "kind": "caption", "panel": P(0.02, 0.02, 0.45, 0.14), "slot": 0},
         {
             "text": "Ainda tá aí?",
             "kind": "speech",
-            "bubble": (0.72, 0.40),
-            "tail": (0.55, 0.52),
+            "panel": P(0.02, 0.16, 0.98, 0.48),
+            "speaker": (0.55, 0.36),
+            "slot": 0,
         },
         {
             "text": "…aguardando input.",
             "kind": "hud",
-            "bubble": (0.50, 0.62),
-            "tail": None,
+            "panel": P(0.20, 0.50, 0.80, 0.68),
+            "slot": 0,
         },
         {
             "text": "…você ficou.\nClaro que você ficou.",
             "kind": "speech",
-            "bubble": (0.68, 0.82),
-            "tail": (0.52, 0.90),
+            "panel": P(0.02, 0.70, 0.98, 0.98),
+            "speaker": (0.55, 0.88),
+            "slot": 0,
         },
     ],
-    # Layout 3 painéis horizontais (Helena esq / Kael dir) — um Kael por quadro
     19: [
-        {"text": "MANHÃ", "kind": "caption", "bubble": (0.10, 0.02), "tail": None},
+        # 3 bandas iguais ~0.33
+        {"text": "MANHÃ", "kind": "caption", "panel": P(0.02, 0.02, 0.20, 0.08), "slot": 0, "pos": (0.50, 0.50)},
         {
             "text": "Você tá gelado. Dormiu direito?",
             "kind": "speech",
-            "bubble": (0.22, 0.05),
-            "tail": (0.28, 0.16),
+            "panel": P(0.02, 0.02, 0.48, 0.33),
+            "speaker": (0.22, 0.22),
+            "slot": 0,
+            "pos": (0.55, 0.22),
         },
         {
             "text": "Mais ou menos. Prova hoje. Cabeça zoada.",
             "kind": "speech",
-            "bubble": (0.78, 0.05),
-            "tail": (0.70, 0.16),
+            "panel": P(0.52, 0.02, 0.98, 0.33),
+            "speaker": (0.78, 0.22),
+            "slot": 0,
+            "pos": (0.45, 0.22),
         },
         {
             "text": "Sangrou o nariz?",
             "kind": "speech",
-            "bubble": (0.22, 0.38),
-            "tail": (0.35, 0.48),
+            "panel": P(0.02, 0.34, 0.48, 0.50),
+            "speaker": (0.22, 0.48),
+            "slot": 0,
+            "pos": (0.55, 0.35),
         },
         {
             "text": "Não. Só… dormi mal.",
             "kind": "speech",
-            "bubble": (0.78, 0.38),
-            "tail": (0.65, 0.48),
+            "panel": P(0.52, 0.34, 0.98, 0.50),
+            "speaker": (0.72, 0.48),
+            "slot": 0,
+            "pos": (0.45, 0.35),
         },
         {
             "text": "Se passar mal, me liga. E Kael… eu sei quando você tá escondendo coisa. Sempre soube.",
             "kind": "speech",
-            "bubble": (0.30, 0.58),
-            "tail": (0.40, 0.68),
+            "panel": P(0.08, 0.50, 0.92, 0.66),
+            "speaker": (0.28, 0.58),
+            "slot": 0,
+            "pos": (0.50, 0.40),
         },
         {
             "text": "Eu sei.",
             "kind": "speech",
-            "bubble": (0.70, 0.82),
-            "tail": (0.55, 0.90),
+            "panel": P(0.02, 0.68, 0.98, 0.98),
+            "speaker": (0.72, 0.78),
+            "slot": 0,
+            "pos": (0.38, 0.16),
         },
     ],
     20: [
         {
             "text": "…mano. Alô?",
             "kind": "speech",
-            "bubble": (0.26, 0.10),
-            "tail": (0.32, 0.24),
-        },
-        {
-            "text": "Desculpa. Tô aqui. Continua.",
-            "kind": "speech",
-            "bubble": (0.74, 0.10),
-            "tail": (0.66, 0.24),
+            "panel": P(0.02, 0.02, 0.54, 0.34),
+            "speaker": (0.20, 0.22),
+            "slot": 0,
+            "pos": (0.28, 0.16),
         },
         {
             "text": "Você tá estranho hoje.",
             "kind": "speech",
-            "bubble": (0.26, 0.30),
-            "tail": (0.32, 0.38),
+            "panel": P(0.02, 0.02, 0.54, 0.34),
+            "speaker": (0.20, 0.24),
+            "slot": 1,
+            "pos": (0.28, 0.48),
+        },
+        {
+            "text": "Desculpa. Tô aqui. Continua.",
+            "kind": "speech",
+            "panel": P(0.56, 0.02, 0.98, 0.34),
+            "speaker": (0.78, 0.20),
+            "slot": 0,
+            "pos": (0.30, 0.16),
         },
         {
             "text": "Dormi três horas. Me julga depois.",
             "kind": "speech",
-            "bubble": (0.74, 0.30),
-            "tail": (0.66, 0.38),
-        },
-        {
-            "text": "Você tá diferente hoje.",
-            "kind": "caption",
-            "bubble": (0.50, 0.52),
-            "tail": None,
-        },
-        {
-            "text": "Diferente como?",
-            "kind": "speech",
-            "bubble": (0.28, 0.64),
-            "tail": (0.40, 0.72),
+            "panel": P(0.56, 0.02, 0.98, 0.34),
+            "speaker": (0.78, 0.22),
+            "slot": 1,
+            "pos": (0.72, 0.16),
         },
         {
             "text": "Não sei. Só… diferente.",
             "kind": "speech",
-            "bubble": (0.74, 0.64),
-            "tail": (0.62, 0.72),
+            "panel": P(0.02, 0.36, 0.34, 0.64),
+            "speaker": (0.18, 0.50),
+            "slot": 0,
+            "pos": (0.50, 0.16),
+        },
+        {
+            "text": "Você tá diferente hoje.",
+            "kind": "caption",
+            "panel": P(0.66, 0.36, 0.98, 0.64),
+            "slot": 0,
+            "pos": (0.50, 0.25),
+        },
+        {
+            "text": "Diferente como?",
+            "kind": "speech",
+            "panel": P(0.36, 0.36, 0.64, 0.64),
+            "speaker": (0.50, 0.55),
+            "slot": 0,
+            "pos": (0.50, 0.14),
         },
         {
             "text": "Ah, não…",
             "kind": "speech",
-            "bubble": (0.72, 0.86),
-            "tail": (0.55, 0.92),
+            "panel": P(0.02, 0.66, 0.98, 0.98),
+            "speaker": (0.55, 0.82),
+            "slot": 0,
+            "pos": (0.22, 0.18),
         },
     ],
     21: [
         {
             "text": "Sumiu. Claro que sumiu.",
             "kind": "speech",
-            "bubble": (0.72, 0.10),
-            "tail": (0.55, 0.24),
+            "panel": P_FULL,
+            "speaker": (0.55, 0.45),
+            "slot": 0,
         },
         {
             "text": "OBJECT MODEL: FASTENER\nPHASE: HELIX\nLOW COST / COMPILE?",
             "kind": "hud",
-            "bubble": (0.50, 0.40),
-            "tail": None,
+            "panel": P(0.08, 0.28, 0.55, 0.48),
+            "slot": 0,
         },
         {
             "text": "…você consegue fazer um parafuso?\nSó um. Sem drama.",
             "kind": "speech",
-            "bubble": (0.72, 0.58),
-            "tail": (0.52, 0.70),
+            "panel": P_FULL,
+            "speaker": (0.55, 0.55),
+            "slot": 1,
         },
         {
             "text": "…ok.",
             "kind": "speech",
-            "bubble": (0.74, 0.84),
-            "tail": (0.55, 0.90),
+            "panel": P_FULL,
+            "speaker": (0.55, 0.62),
+            "slot": 2,
         },
     ],
     22: [
         {
             "text": "Ele… pesa.\nMas parece que eu tô segurando uma mentira.\nPai… o que era isso?",
             "kind": "speech",
-            "bubble": (0.55, 0.22),
-            "tail": (0.48, 0.42),
+            "panel": P_FULL,
+            "speaker": (0.50, 0.50),
+            "slot": 0,
         },
     ],
     23: [
         {
             "text": "Quarenta e um por cento é ruído.",
             "kind": "speech",
-            "bubble": (0.28, 0.55),
-            "tail": (0.22, 0.72),
+            "panel": P(0.02, 0.40, 0.49, 0.98),
+            "speaker": (0.25, 0.70),
+            "slot": 0,
         },
         {
             "text": "Ruído é como a gente chama o que ainda não quer ver.\nMantém o watch.",
             "kind": "speech",
-            "bubble": (0.72, 0.55),
-            "tail": (0.80, 0.72),
+            "panel": P(0.51, 0.40, 0.98, 0.98),
+            "speaker": (0.75, 0.70),
+            "slot": 0,
         },
     ],
     24: [
         {
             "text": "“Eles”?\nQuem é “eles”?",
             "kind": "speech",
-            "bubble": (0.72, 0.28),
-            "tail": (0.55, 0.42),
+            "panel": P(0.02, 0.02, 0.98, 0.45),
+            "speaker": (0.55, 0.30),
+            "slot": 0,
         },
         {
             "text": "Pai…\no que você deixou em mim?",
             "kind": "speech",
-            "bubble": (0.55, 0.58),
-            "tail": (0.48, 0.70),
+            "panel": P(0.02, 0.47, 0.98, 0.82),
+            "speaker": (0.50, 0.68),
+            "slot": 0,
         },
         {
             "text": "CONTINUA — Nº 2: PROTOCOLO HÉLICE",
             "kind": "caption",
-            "bubble": (0.50, 0.94),
-            "tail": None,
+            "panel": P(0.10, 0.86, 0.90, 0.98),
+            "slot": 0,
+            "anchor": "bottom",
         },
     ],
 }
 
 
-def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    path = (
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-        if bold
-        else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-    )
-    if Path(path).exists():
-        return ImageFont.truetype(path, size=size)
+# ---------------------------------------------------------------------------
+# Engine
+# ---------------------------------------------------------------------------
+
+@dataclass
+class Placed:
+    kind: str
+    text: str
+    panel: tuple[float, float, float, float]
+    speaker: tuple[float, float] | None
+    slot: int
+    anchor: str
+    label: str = ""
+    pos: tuple[float, float] | None = None  # relative inside panel (0–1)
+    # computed in px
+    bx: int = 0
+    by: int = 0
+    bw: int = 0
+    bh: int = 0
+    tw: int = 0
+    th: int = 0
+    font_obj: ImageFont.ImageFont | None = None
+    fill: tuple = (255, 255, 255)
+    outline: tuple = (18, 18, 18)
+    tfill: tuple = (12, 12, 12)
+    radius: int = 22
+    is_rect: bool = False
+
+
+def get_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
+    # Comic-readable sans; Liberation as secondary
+    candidates = [
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ]
+    for path in candidates:
+        if Path(path).exists():
+            return ImageFont.truetype(path, size=size)
     return ImageFont.load_default()
 
 
-def wrap(text: str, width: int) -> str:
+def wrap_text(text: str, width: int) -> str:
     lines: list[str] = []
     for para in text.split("\n"):
         if not para.strip():
@@ -512,160 +658,398 @@ def wrap(text: str, width: int) -> str:
 
 
 def measure(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.ImageFont) -> tuple[int, int]:
-    bbox = draw.multiline_textbbox((0, 0), text, font=fnt, spacing=3, align="center")
+    bbox = draw.multiline_textbbox((0, 0), text, font=fnt, spacing=4, align="center")
     return bbox[2] - bbox[0], bbox[3] - bbox[1]
 
 
-def face_safe_bubble_y(by: float, tail: tuple[float, float] | None, bh_frac: float = 0.08) -> float:
-    """Keep balloon body above the speaker's face/mouth."""
-    if not tail:
-        return min(by, 0.35)
-    # balloon center must sit well above mouth
-    max_by = tail[1] - 0.10 - bh_frac
-    return min(by, max(0.06, max_by))
+def panel_px(panel: tuple[float, float, float, float], w: int, h: int) -> tuple[int, int, int, int]:
+    x0, y0, x1, y1 = panel
+    return int(x0 * w), int(y0 * h), int(x1 * w), int(y1 * h)
 
 
-def draw_tail(draw, bx, by, bw, bh, txy):
-    tx, ty = txy
-    base_y = by + bh // 2 - 2
-    base_x = bx - bw // 5 if tx < bx else bx + bw // 5
-    # short pointer toward mouth — stop before covering face center
+def rects_overlap(a: tuple[int, int, int, int], b: tuple[int, int, int, int], pad: int = 6) -> bool:
+    ax0, ay0, ax1, ay1 = a
+    bx0, by0, bx1, by1 = b
+    return not (ax1 + pad <= bx0 or bx1 + pad <= ax0 or ay1 + pad <= by0 or by1 + pad <= ay0)
+
+
+def place_in_panel(items: list[Placed], w: int, h: int, draw: ImageDraw.ImageDraw) -> None:
+    """Lay out balloons inside each panel's top lettering zone; resolve collisions."""
+    # Prepare sizes
+    for it in items:
+        kind = it.kind
+        if kind == "sfx":
+            it.font_obj = get_font(max(26, w // 32), bold=True)
+            it.text = wrap_text(it.text, 14)
+            it.tw, it.th = measure(draw, it.text, it.font_obj)
+            it.bw, it.bh = it.tw + 8, it.th + 8
+            it.is_rect = True
+            it.fill = (0, 0, 0, 0)
+            continue
+        if kind == "hud":
+            it.font_obj = get_font(max(14, w // 58), bold=True)
+            it.text = wrap_text(it.text, 28)
+            it.tw, it.th = measure(draw, it.text, it.font_obj)
+            it.bw, it.bh = it.tw + 28, it.th + 24
+            it.is_rect = True
+            it.fill = (8, 28, 32)
+            it.outline = (62, 199, 184)
+            it.tfill = (170, 250, 235)
+            continue
+        if kind == "phone":
+            it.font_obj = get_font(max(14, w // 58))
+            body = wrap_text(it.text, 26)
+            it.text = f"{it.label}\n{body}" if it.label else body
+            it.tw, it.th = measure(draw, it.text, it.font_obj)
+            it.bw, it.bh = it.tw + 28, it.th + 24
+            it.is_rect = True
+            it.radius = 14
+            it.fill = (245, 248, 252)
+            it.outline = (35, 35, 45)
+            it.tfill = (15, 15, 25)
+            continue
+        if kind in ("narration", "caption"):
+            it.font_obj = get_font(max(14, w // 58), bold=(kind == "caption"))
+            it.text = wrap_text(it.text, 32)
+            it.tw, it.th = measure(draw, it.text, it.font_obj)
+            it.bw, it.bh = it.tw + 26, it.th + 20
+            it.is_rect = True
+            it.radius = 4
+            if kind == "caption":
+                it.fill = (18, 18, 18)
+                it.tfill = (250, 250, 250)
+            else:
+                it.fill = (252, 252, 248)
+                it.tfill = (20, 20, 20)
+            continue
+        # speech
+        it.font_obj = get_font(max(15, w // 54))
+        it.text = wrap_text(it.text, 20)
+        it.tw, it.th = measure(draw, it.text, it.font_obj)
+        it.bw, it.bh = it.tw + 36, it.th + 28
+        it.radius = max(18, min(30, it.bh // 2))
+        it.fill = (255, 255, 255)
+        it.outline = (18, 18, 18)
+        it.tfill = (10, 10, 10)
+
+    # Group by panel
+    by_panel: dict[tuple, list[Placed]] = {}
+    for it in items:
+        by_panel.setdefault(it.panel, []).append(it)
+
+    for panel, group in by_panel.items():
+        group.sort(key=lambda x: x.slot)
+        px0, py0, px1, py1 = panel_px(panel, w, h)
+        pw, ph = max(1, px1 - px0), max(1, py1 - py0)
+        # lettering zone = top ~30% of panel (or bottom if anchor=bottom for captions)
+        zone_top = py0 + int(0.04 * ph)
+        zone_bot = py0 + int(0.38 * ph)
+        margin = 10
+
+        # Initial placement: stack by slot in reading order (L→R within rows)
+        n = len(group)
+        for i, it in enumerate(group):
+            if it.pos is not None:
+                # Explicit relative position inside panel (guarantees intent)
+                cx = px0 + int(it.pos[0] * pw)
+                cy = py0 + int(it.pos[1] * ph)
+            elif it.anchor == "bottom":
+                cx = (px0 + px1) // 2
+                cy = py1 - it.bh // 2 - margin - 4
+            elif it.kind == "sfx":
+                cx = px0 + int(0.75 * pw)
+                cy = py0 + int(0.20 * ph)
+            else:
+                # distribute horizontally in lettering zone
+                if n == 1:
+                    frac_x = 0.50
+                else:
+                    frac_x = 0.18 + (0.64 * i / max(1, n - 1))
+                # Prefer side near speaker if present
+                if it.speaker:
+                    sx = it.speaker[0] * w
+                    sy = it.speaker[1] * h
+                    # close-up: speaker low in panel → keep bubble in top corners
+                    if sy > py0 + 0.45 * ph:
+                        frac_x = 0.22 if sx > (px0 + px1) / 2 else 0.78
+                    elif sx < (px0 + px1) / 2:
+                        frac_x = min(frac_x, 0.35)
+                    else:
+                        frac_x = max(frac_x, 0.65)
+                cx = px0 + int(frac_x * pw)
+                # vertical stack inside zone
+                row = i if n <= 3 else i % 2
+                cy = zone_top + it.bh // 2 + row * (it.bh + 8)
+                if cy + it.bh // 2 > zone_bot and it.kind == "speech":
+                    cy = zone_bot - it.bh // 2
+
+            # Clamp inside panel
+            cx = max(px0 + it.bw // 2 + margin, min(px1 - it.bw // 2 - margin, cx))
+            cy = max(py0 + it.bh // 2 + margin, min(py1 - it.bh // 2 - margin, cy))
+            it.bx, it.by = cx, cy
+
+        # Collision resolve (push down / sideways within panel)
+        for _ in range(12):
+            moved = False
+            for i in range(len(group)):
+                for j in range(i + 1, len(group)):
+                    a, b = group[i], group[j]
+                    ra = (a.bx - a.bw // 2, a.by - a.bh // 2, a.bx + a.bw // 2, a.by + a.bh // 2)
+                    rb = (b.bx - b.bw // 2, b.by - b.bh // 2, b.bx + b.bw // 2, b.by + b.bh // 2)
+                    if not rects_overlap(ra, rb, pad=8):
+                        continue
+                    # push lower-slot down, or sideways if near bottom of zone
+                    if b.by >= a.by:
+                        b.by = a.by + a.bh // 2 + b.bh // 2 + 10
+                    else:
+                        a.by = b.by + b.bh // 2 + a.bh // 2 + 10
+                    # re-clamp
+                    for it in (a, b):
+                        it.bx = max(px0 + it.bw // 2 + margin, min(px1 - it.bw // 2 - margin, it.bx))
+                        it.by = max(py0 + it.bh // 2 + margin, min(py1 - it.bh // 2 - margin, it.by))
+                    moved = True
+            if not moved:
+                break
+
+
+def draw_wedge_tail(
+    draw: ImageDraw.ImageDraw,
+    bx: int,
+    by: int,
+    bw: int,
+    bh: int,
+    speaker: tuple[float, float],
+    w: int,
+    h: int,
+    panel: tuple[float, float, float, float],
+) -> None:
+    """Short comic wedge from the bubble edge nearest the mouth — clipped to panel."""
+    sx, sy = int(speaker[0] * w), int(speaker[1] * h)
+    px0, py0, px1, py1 = panel_px(panel, w, h)
+
+    sx = max(px0 + 10, min(px1 - 10, sx))
+    sy = max(py0 + 10, min(py1 - 10, sy))
+
+    # Pick attach point on bubble perimeter closest to speaker
+    left, right = bx - bw // 2, bx + bw // 2
+    top, bottom = by - bh // 2, by + bh // 2
+    candidates = [
+        (bx, bottom - 1),  # bottom center
+        (right - 2, by),  # right mid
+        (left + 2, by),  # left mid
+        (bx + bw // 4, bottom - 1),
+        (bx - bw // 4, bottom - 1),
+    ]
+    attach_x, attach_y = min(candidates, key=lambda p: (p[0] - sx) ** 2 + (p[1] - sy) ** 2)
+
+    dx, dy = sx - attach_x, sy - attach_y
+    dist = math.hypot(dx, dy) or 1.0
+    # Allow a bit more length when bubble is intentionally offset (side lettering)
+    max_len = min(int(0.09 * h), int(0.55 * dist), 110)
+    length = max(24, max_len)
+
+    tip_x = attach_x + int(dx / dist * length)
+    tip_y = attach_y + int(dy / dist * length)
+    tip_x = max(px0 + 6, min(px1 - 6, tip_x))
+    tip_y = max(py0 + 6, min(py1 - 6, tip_y))
+
+    # Stop short of mouth so tip doesn't cover lips/eyes
+    stop = max(18, int(0.025 * h))
+    if math.hypot(tip_x - sx, tip_y - sy) < stop:
+        tip_x = sx - int(dx / dist * stop)
+        tip_y = sy - int(dy / dist * stop)
+        tip_x = max(px0 + 6, min(px1 - 6, tip_x))
+        tip_y = max(py0 + 6, min(py1 - 6, tip_y))
+
+    base = 13
+    nx, ny = -dy / dist, dx / dist
+    p1 = (attach_x + int(nx * base), attach_y + int(ny * base))
+    p2 = (attach_x - int(nx * base), attach_y - int(ny * base))
+
+    draw.polygon([p1, p2, (tip_x, tip_y)], fill=(255, 255, 255), outline=(18, 18, 18))
     draw.polygon(
-        [(base_x - 10, base_y), (base_x + 10, base_y), (tx, ty)],
+        [
+            (attach_x + int(nx * (base - 3)), attach_y + int(ny * (base - 3))),
+            (attach_x - int(nx * (base - 3)), attach_y - int(ny * (base - 3))),
+            (tip_x - int(dx / dist * 2), tip_y - int(dy / dist * 2)),
+        ],
         fill=(255, 255, 255),
-        outline=(20, 20, 20),
     )
-    draw.polygon([(base_x - 8, base_y), (base_x + 8, base_y), (tx, ty)], fill=(255, 255, 255))
-    draw.line([(base_x - 10, base_y), (tx, ty)], fill=(20, 20, 20), width=2)
-    draw.line([(base_x + 10, base_y), (tx, ty)], fill=(20, 20, 20), width=2)
 
 
-def draw_balloon(im: Image.Image, item: dict) -> None:
+def draw_placed(im: Image.Image, items: list[Placed]) -> None:
     draw = ImageDraw.Draw(im)
     w, h = im.size
-    kind = item["kind"]
-    text = item["text"]
-    bx = int(item["bubble"][0] * w)
-    by_frac = item["bubble"][1]
-    tail = item.get("tail")
 
-    if kind == "sfx":
-        fnt = font(max(22, w // 36), bold=True)
-        text = wrap(text, 16)
-        tw, th = measure(draw, text, fnt)
-        draw.multiline_text((bx - tw // 2, int(by_frac * h) - th // 2), text, font=fnt, fill=(25, 25, 25), align="center")
-        return
+    # tails first (under bubble body), then bodies, then text
+    for it in items:
+        if it.kind == "speech" and it.speaker:
+            draw_wedge_tail(draw, it.bx, it.by, it.bw, it.bh, it.speaker, w, h, it.panel)
 
-    if kind == "hud":
-        fnt = font(max(15, w // 55), bold=True)
-        text = wrap(text, 30)
-        tw, th = measure(draw, text, fnt)
-        pad = 12
-        by = int(by_frac * h)
-        draw.rectangle(
-            [bx - tw // 2 - pad, by - th // 2 - pad, bx + tw // 2 + pad, by + th // 2 + pad],
-            fill=(8, 28, 32),
-            outline=(62, 199, 184),
-            width=2,
-        )
-        draw.multiline_text((bx - tw // 2, by - th // 2), text, font=fnt, fill=(170, 250, 235), spacing=3, align="left")
-        return
-
-    if kind == "phone":
-        fnt = font(max(14, w // 58))
-        label = item.get("label", "")
-        body = wrap(text, 28)
-        full = f"{label}\n{body}" if label else body
-        tw, th = measure(draw, full, fnt)
-        pad = 12
-        by = int(min(by_frac, 0.22) * h)  # phones stay high
+    for it in items:
+        x0, y0 = it.bx - it.bw // 2, it.by - it.bh // 2
+        x1, y1 = it.bx + it.bw // 2, it.by + it.bh // 2
+        if it.kind == "sfx":
+            draw.multiline_text(
+                (it.bx - it.tw // 2, it.by - it.th // 2),
+                it.text,
+                font=it.font_obj,
+                fill=(25, 25, 25),
+                align="center",
+                spacing=4,
+            )
+            continue
+        if it.is_rect and it.kind != "speech":
+            if it.kind in ("narration", "caption", "phone", "hud"):
+                draw.rounded_rectangle(
+                    [x0, y0, x1, y1],
+                    radius=it.radius,
+                    fill=it.fill,
+                    outline=it.outline,
+                    width=2,
+                )
+            draw.multiline_text(
+                (it.bx - it.tw // 2, it.by - it.th // 2),
+                it.text,
+                font=it.font_obj,
+                fill=it.tfill,
+                align="center" if it.kind != "phone" and it.kind != "hud" else "left",
+                spacing=4,
+            )
+            continue
+        # speech body
         draw.rounded_rectangle(
-            [bx - tw // 2 - pad, by - th // 2 - pad, bx + tw // 2 + pad, by + th // 2 + pad],
-            radius=14,
-            fill=(245, 248, 252),
-            outline=(35, 35, 45),
-            width=2,
-        )
-        draw.multiline_text((bx - tw // 2, by - th // 2), full, font=fnt, fill=(15, 15, 25), spacing=3, align="left")
-        return
-
-    if kind in ("narration", "caption"):
-        fnt = font(max(14, w // 58), bold=(kind == "caption"))
-        text = wrap(text, 34)
-        tw, th = measure(draw, text, fnt)
-        pad = 12
-        by = int(by_frac * h)
-        fill = (252, 252, 248) if kind == "narration" else (18, 18, 18)
-        tfill = (20, 20, 20) if kind == "narration" else (250, 250, 250)
-        draw.rectangle(
-            [bx - tw // 2 - pad, by - th // 2 - pad, bx + tw // 2 + pad, by + th // 2 + pad],
-            fill=fill,
-            outline=(25, 25, 25),
-            width=2,
-        )
-        draw.multiline_text((bx - tw // 2, by - th // 2), text, font=fnt, fill=tfill, spacing=3, align="center")
-        return
-
-    # speech — smaller, top-biased, face-safe
-    fnt = font(max(15, w // 56))
-    text = wrap(text, 22)
-    tw, th = measure(draw, text, fnt)
-    pad_x, pad_y = 14, 10
-    bw, bh = tw + pad_x * 2, th + pad_y * 2
-    by_frac = face_safe_bubble_y(by_frac, tail, bh / h)
-    by = int(by_frac * h)
-    # keep balloon inside page
-    bx = max(bw // 2 + 8, min(w - bw // 2 - 8, bx))
-    by = max(bh // 2 + 8, min(h - bh // 2 - 8, by))
-
-    txy = None
-    if tail:
-        # aim at mouth but stop short of face center (don't bury tip in eyes)
-        tx, ty = int(tail[0] * w), int(tail[1] * h)
-        # if balloon would still overlap mouth vertically, push higher
-        if by + bh // 2 > ty - int(0.04 * h):
-            by = max(bh // 2 + 8, ty - int(0.04 * h) - bh // 2)
-        txy = (tx, ty)
-        draw_tail(draw, bx, by, bw, bh, txy)
-
-    draw.rounded_rectangle(
-        [bx - bw // 2, by - bh // 2, bx + bw // 2, by + bh // 2],
-        radius=18,
-        fill=(255, 255, 255),
-        outline=(18, 18, 18),
-        width=2,
-    )
-    if txy:
-        draw_tail(draw, bx, by, bw, bh, txy)
-        draw.rounded_rectangle(
-            [bx - bw // 2, by - bh // 2, bx + bw // 2, by + bh // 2],
-            radius=18,
+            [x0, y0, x1, y1],
+            radius=it.radius,
             fill=(255, 255, 255),
             outline=(18, 18, 18),
             width=2,
         )
-    draw.multiline_text((bx - tw // 2, by - th // 2), text, font=fnt, fill=(10, 10, 10), spacing=3, align="center")
+        # redraw short tail tip over bottom edge seam
+        if it.speaker:
+            draw_wedge_tail(draw, it.bx, it.by, it.bw, it.bh, it.speaker, w, h, it.panel)
+            draw.rounded_rectangle(
+                [x0, y0, x1, y1],
+                radius=it.radius,
+                fill=(255, 255, 255),
+                outline=(18, 18, 18),
+                width=2,
+            )
+        draw.multiline_text(
+            (it.bx - it.tw // 2, it.by - it.th // 2),
+            it.text,
+            font=it.font_obj,
+            fill=(10, 10, 10),
+            align="center",
+            spacing=4,
+        )
 
 
-def letter_page(page_num: int, src: Path, dst: Path) -> None:
+def qc_page(items: list[Placed], w: int, h: int, page_num: int) -> list[str]:
+    errors: list[str] = []
+    for it in items:
+        px0, py0, px1, py1 = panel_px(it.panel, w, h)
+        x0, y0 = it.bx - it.bw // 2, it.by - it.bh // 2
+        x1, y1 = it.bx + it.bw // 2, it.by + it.bh // 2
+        # Must stay mostly inside panel (allow 4px bleed)
+        if x0 < px0 - 4 or y0 < py0 - 4 or x1 > px1 + 4 or y1 > py1 + 4:
+            errors.append(
+                f"p{page_num}: bubble '{it.text[:24]}' escapes panel "
+                f"box=({x0},{y0},{x1},{y1}) panel=({px0},{py0},{px1},{py1})"
+            )
+        if it.kind == "speech" and it.speaker:
+            sx, sy = it.speaker[0] * w, it.speaker[1] * h
+            # Speaker should be inside same panel (or near edge — allow 12% pad for side balloons)
+            pad = 0.12 * max(px1 - px0, 1)
+            if not (px0 - pad <= sx <= px1 + pad and py0 - pad <= sy <= py1 + pad):
+                errors.append(
+                    f"p{page_num}: speaker for '{it.text[:24]}' outside panel"
+                )
+            # Bubble center must not sit on the face (both axes close)
+            if abs(it.bx - sx) < max(24, 0.035 * w) and abs(it.by - sy) < max(28, 0.045 * h):
+                errors.append(
+                    f"p{page_num}: bubble covers face '{it.text[:24]}'"
+                )
+    # pairwise overlap inside page
+    for i in range(len(items)):
+        for j in range(i + 1, len(items)):
+            a, b = items[i], items[j]
+            if a.kind == "sfx" or b.kind == "sfx":
+                continue
+            ra = (a.bx - a.bw // 2, a.by - a.bh // 2, a.bx + a.bw // 2, a.by + a.bh // 2)
+            rb = (b.bx - b.bw // 2, b.by - b.bh // 2, b.bx + b.bw // 2, b.by + b.bh // 2)
+            if rects_overlap(ra, rb, pad=2):
+                errors.append(
+                    f"p{page_num}: overlap '{a.text[:18]}' vs '{b.text[:18]}'"
+                )
+    return errors
+
+
+def letter_page(page_num: int, src: Path, dst: Path, strict: bool = True) -> list[str]:
     work = Image.open(src).convert("RGB")
-    for item in LETTERING.get(page_num, []):
-        draw_balloon(work, item)
-    work.save(dst, quality=93)
-    print("lettered", dst.name, f"({len(LETTERING.get(page_num, []))} items)")
+    w, h = work.size
+    draw = ImageDraw.Draw(work)
+    raw = LETTERING.get(page_num, [])
+    items: list[Placed] = []
+    for item in raw:
+        items.append(
+            Placed(
+                kind=item["kind"],
+                text=item["text"],
+                panel=item["panel"],
+                speaker=item.get("speaker"),
+                slot=item.get("slot", 0),
+                anchor=item.get("anchor", "top"),
+                label=item.get("label", ""),
+                pos=item.get("pos"),
+            )
+        )
+    place_in_panel(items, w, h, draw)
+    errors = qc_page(items, w, h, page_num)
+    # Face-cover warnings: demote to soft if only that — still draw, report
+    hard = [e for e in errors if any(k in e for k in ("overlap", "escapes", "outside panel", "covers face"))]
+    soft = [e for e in errors if e not in hard]
+    if hard and strict:
+        for e in hard:
+            print("QC FAIL:", e, file=sys.stderr)
+        raise SystemExit(f"lettering QC failed on page {page_num} ({len(hard)} hard errors)")
+    for e in soft:
+        print("QC warn:", e, file=sys.stderr)
+    draw_placed(work, items)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    work.save(dst, quality=94)
+    print(f"lettered {dst.name} ({len(items)} items)")
+    return errors
 
 
 def main() -> None:
+    if not CLEAN.exists():
+        raise SystemExit(f"missing clean pages dir: {CLEAN}")
     OUT.mkdir(parents=True, exist_ok=True)
-    cover = PAGES / "page_00_capa.jpg"
-    if cover.exists():
-        Image.open(cover).convert("RGB").save(OUT / "page_00_capa.jpg", quality=93)
+    PAGES.mkdir(parents=True, exist_ok=True)
 
+    cover = CLEAN / "page_00_capa.jpg"
+    if cover.exists():
+        Image.open(cover).convert("RGB").save(OUT / "page_00_capa.jpg", quality=94)
+        Image.open(cover).convert("RGB").save(PAGES / "page_00_capa.jpg", quality=94)
+
+    all_soft: list[str] = []
     for i in range(1, NUM_PAGES + 1):
-        src = PAGES / f"page_{i:02d}.jpg"
+        src = CLEAN / f"page_{i:02d}.jpg"
         if not src.exists():
-            raise SystemExit(f"missing {src}")
-        letter_page(i, src, OUT / f"page_{i:02d}.jpg")
+            # pages 23/24 may lack clean — skip regenerate if present in pages already lettered
+            legacy = PAGES / f"page_{i:02d}.jpg"
+            if legacy.exists() and i in (23, 24):
+                print(f"skip {i}: no clean source (keeping existing lettered page)")
+                Image.open(legacy).convert("RGB").save(OUT / f"page_{i:02d}.jpg", quality=94)
+                continue
+            raise SystemExit(f"missing clean page: {src}")
+        errs = letter_page(i, src, OUT / f"page_{i:02d}.jpg", strict=True)
+        all_soft.extend(errs)
+        # sync to pages/
+        Image.open(OUT / f"page_{i:02d}.jpg").convert("RGB").save(PAGES / f"page_{i:02d}.jpg", quality=94)
+
+    print(f"done. soft warnings: {len(all_soft)}")
 
 
 if __name__ == "__main__":
