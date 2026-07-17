@@ -1,18 +1,18 @@
 # KAEL ZERO
 ## Revista Nº 1 — ECO NO PISO  
-### (Revisão de amarração — v1.1)
+### (v1.2 — amarração + diálogos)
 
 **Arco 1 · T1**  
 **Páginas:** 22 + capa  
-**Nota de revisão:** cortes de HQ mantidos; cada salto agora tem ponte causal (tempo, objeto, som ou decisão).  
-**Ajuste canônico:** pág. 21 — Pulse Cuff (não anel).
+**Revisão:** pontes causais mantidas; diálogos reescritos para soar falados, não “escritos”.  
+**Canônico:** Pulse Cuff · parafuso = Fase Hélice (digital-físico).
 
 ---
 
 <img src="./CAPA.png" alt="Capa — Kael Zero #1" />
 
 **CAPA**  
-Kael no corredor. Olha o piso. Luz teal vaza de uma fresta. **KAEL ZERO.** Sem arma. Só a pergunta enterrada na casa.
+Kael no corredor. Olha o piso. Luz teal vaza de uma fresta. **KAEL ZERO.**
 
 ---
 
@@ -30,12 +30,12 @@ Kael no corredor. Olha o piso. Luz teal vaza de uma fresta. **KAEL ZERO.** Sem a
 
 **Quadro 3** — Kael, 10 anos, cabelo azul, no chão. Olha a cama vazia. Não chora. Ainda.
 
-**Quadro 4** — Mesmo olho do menino — match cut — vira o olho de Kael aos 16, refletido na tela preta de um celular.  
-**Legenda de tempo (canto):** `SEIS ANOS DEPOIS`
+**Quadro 4** — Match cut: olho do menino → olho de Kael aos 16 no reflexo do celular.  
+**Legenda:** `SEIS ANOS DEPOIS`
 
-**Narração (mínima, uma vez só):**  
-Ele acreditou que sabia o que o pai tentou.  
-A casa nunca corrigiu.
+**Narração (mínima):**  
+Ele achou que sabia o que aquilo significava.  
+A casa deixou ele acreditar.
 
 ---
 
@@ -45,167 +45,169 @@ A casa nunca corrigiu.
 
 **SFX:** *KRRRASH*
 
-**Quadro 2** — Kael 16 freia feio, ri sozinho. Techwear preto, forro azul, cabelo safira.
+**Quadro 2** — Kael freia feio, quase cai, ri sozinho.
 
 **KAEL:**  
-Nota sete.  
-…cinco. Beleza, universo: empatamos.
+Ai…  
+Tá. Quase.
 
-**Quadro 3** — Ryo no portão, acena demais.
+**Quadro 3** — Ryo no portão.
 
 **RYO:**  
-ZERO! Se quebrar o tornozelo antes da prova, eu não carrego sua alma.
+Kael! Se você se matar antes da prova de física, eu não vou na sua missa.
 
 **KAEL:**  
-Já é sua. Você copiou meu dever.
+Relaxa. Você ia só pelo lanche depois.
 
 **RYO:**  
-Empréstimo. Com juros.
+…justo.
 
-**Quadro 4** — Maya passa com fones e caderno. Olha meio segundo a mais. Kael nota. Desvia.  
-*(Ponte: o celular do bolso vibra — mesma linha visual do match cut da pág. 1.)*
+**Quadro 4** — Maya passa com fones e caderno. Olha um segundo a mais. Kael nota. Desvia.  
+Celular vibra no bolso.
 
 ---
 
 ## PÁGINA 3 — A mensagem que explica a casa vazia
 
-**Quadro 1** — Corredor. Armário do Kael: placa-mãe, chave de fenda, bandaid, cereal. Ele abre com a mesma chave que usará no painel depois *(planta de objeto)*.
+**Quadro 1** — Corredor. Armário: placa-mãe, chave de fenda, bandaid, cereal.
 
-**Quadro 2** — Tela do celular (a vibração da pág. 2):
+**Quadro 2** — Mensagem da Helena:
 
 **HELENA:**  
-*Plantão estendido de novo. Macarrão na geladeira. Não desmonte a torradeira. Te amo.*
+*Plantão esticou de novo. Tem macarrão na geladeira. Por favor, não desmonta a torradeira hoje. Te amo.*
 
 **KAEL:**  
-…ela me conhece.
+Ela me conhece demais. Assustador.
 
-**Quadro 3** — Ryo:
+**Quadro 3**
 
 **RYO:**  
 Skate park depois da última?
 
 **KAEL:**  
-Hoje não. Casa vazia + cérebro frito = eu vou acabar desmontando a geladeira.
+Hoje não dá. Casa vazia… se eu for, acabo abrindo alguma coisa que não devia.
 
 **RYO:**  
-Isso não é brincadeira, é previsão.
+Tipo a torradeira.
 
-**Quadro 4** — Maya, ao fundo, ouve “casa vazia”. Não comenta. Segura o caderno mais forte.  
-*(Ponte causal: por isso ele vai para casa sozinho — não “sumiu” da cena do Ryo.)*
+**KAEL:**  
+Tipo a torradeira.
+
+**Quadro 4** — Maya ouve “casa vazia”. Não fala nada. Aperta o caderno.  
+*(Por isso ele vai sozinho para casa.)*
 
 ---
 
 ## PÁGINA 4 — Energia muda de forma
 
-**Quadro 1** — Aula de física. Professor no quadro: circuito simples.
+**Quadro 1** — Aula de física. Circuito no quadro.
 
 **PROFESSOR:**  
-Energia não desaparece. Só muda de forma.
+Energia não some. Ela só muda de forma. Anotem isso antes que eu cobrem na prova.
 
-**Quadro 2** — Kael presta atenção de verdade. No canto do caderno, a mão desenha um **cilindro** sem ele decidir — eco do lab que ainda não viu.
+**Quadro 2** — Kael presta atenção. No canto do caderno, a mão desenha um cilindro sem ele perceber.
 
-**Quadro 3** — Pela janela: van branca sem logo passa na rua da escola. Kael **não** nota. O leitor pode.
+**Quadro 3** — Janela: van branca sem logo passa. Kael não nota.
 
-**Quadro 4** — Sinal. Ele fecha o caderno. O cilindro fica sozinho na folha.  
-**Legenda:** `DEPOIS DA AULA`  
-*(Ponte: ele vai embora como combinou na pág. 3.)*
+**Quadro 4** — Sinal. Fecha o caderno. O cilindro fica na folha.  
+**Legenda:** `DEPOIS DA AULA`
 
 ---
 
 ## PÁGINA 5 — A mesma van, a mesma casa
 
-**Quadro 1** — Rua residencial. Kael com skate no ombro. Ao fundo, a **mesma van branca** estacionada dois quarteirões atrás — longe demais para certeza, perto demais para coincidência.
+**Quadro 1** — Rua. Skate no ombro. A mesma van, dois quarteirões atrás.
 
-**Quadro 2** — Casa Zero: luz da sala apagada demais.
+**Quadro 2** — Casa Zero. Luz da sala apagada.
 
 **KAEL:**  
-Cheiro de chuva e casa vazia. Combo clássico.
+…mais um dia de casa sozinha. Que novidade.
 
 **Quadro 3** — Post-it na porta:
 
 *Come. Dorme. Existe.*  
 *— Mãe*
 
-**Quadro 4** — Ele sorri, entra.
+**KAEL:**  
+Sim, senhora.
 
-**SFX:** *click*  
-*(Ponte: macarrão da mensagem da pág. 3 → próxima página.)*
+**Quadro 4** — Entra.  
+**SFX:** *click*
 
 ---
 
 ## PÁGINA 6 — O som não é a geladeira
 
-**Quadro 1** — Entrada. Foto na parede: Adrian, Helena, Kael criança. Adrian sorri demais.
+**Quadro 1** — Foto na parede: Adrian, Helena, Kael criança.
 
-**Quadro 2** — Cozinha. Abre a geladeira. Macarrão. Come em pé.  
-**SFX geladeira:** *mmm* normal — e por baixo, outro som: *…vmm…* mais grave, vindo do **piso**.
+**Quadro 2** — Cozinha. Macarrão. Come em pé.  
+Geladeira *mmm* — e por baixo: *…vmm…* vindo do piso.
 
-**Quadro 3** — Kael para de mastigar. Olha o chão, não o teto.
+**Quadro 3** — Para de mastigar. Olha o chão.
 
 **KAEL:**  
-…ok. Geladeira inocente. Piso culpado.
+Não foi a geladeira.
 
-**Quadro 4** — Sala. Videogame ligado por hábito; ele **não** joga. Ajoelha, mão no carpete.
+**Quadro 4** — Sala. Liga o videogame por costume, mas ajoelha no carpete.
 
-**SFX:** *VMM—tik—VMM*  
-*(Ponte: o som guia a próxima página — não é salto mágico para o escritório.)*
+**SFX:** *VMM—tik—VMM*
+
+**KAEL:**  
+…oi?
 
 ---
 
 ## PÁGINA 7 — Seguir o eco
 
-**Quadro 1** — Close nos olhos: curiosidade, não heroísmo.
+**Quadro 1** — Close nos olhos. Curiosidade.
 
 **KAEL:**  
-Se for rato, desculpa antecipada.
+Se for rato, a gente negocia.
 
-**Quadro 2** — Ele rasteja a mão pelo piso: o *tik* fica mais forte em direção ao **corredor**.
+**Quadro 2** — Segue o som com a mão no piso → corredor.
 
-**Quadro 3** — Corredor → porta do antigo escritório do pai (caixas, cabo de rede, cadeira morta). O som vibra no batente.
+**Quadro 3** — Escritório do pai: caixas, cabo, cadeira que ninguém usa. O batente vibra.
 
-**Quadro 4** — Atrás da estante: painel de “manutenção elétrica”. Parafusos um milímetro mais novos. Sem placa teatral.
+**Quadro 4** — Painel de “manutenção elétrica” atrás da estante. Parafusos novos demais.
 
 **KAEL:**  
-Manutenção que ninguém mexe há seis anos. Suspeito nível pai.
+Manutenção… que nunca ninguém manteve.
 
 ---
 
 ## PÁGINA 8 — Não é manutenção
 
-**Quadro 1** — Kael saca a **mesma chave de fenda do armário** (pág. 3). *tic tic tic*
+**Quadro 1** — Mesma chave de fenda do armário. *tic tic tic*
 
-**Quadro 2** — Painel sai. Não há fiação: vão, escada, ar frio.
+**Quadro 2** — Painel sai. Vão. Escada. Ar frio.
 
 **KAEL:**  
-…isso não é manutenção.
+Tá.  
+Isso aqui não é caixa de luz.
 
-**Quadro 3** — Olha para trás: foto da família no fim do corredor. Decide.
+**Quadro 3** — Olha a foto da família no corredor. Engole seco. Decide.
 
-**Quadro 4** — Desce. A câmera fica no buraco. O leitor desce com ele.  
-**SFX do eco, mais claro embaixo:** *VMM*
+**Quadro 4** — Desce.  
+**SFX:** *VMM* (mais claro embaixo)
 
 ---
 
 ## PÁGINA 9 — O que o som queria
 
-**Quadro 1** — Splash: lab subterrâneo. Concreto, racks, poeira, um LED vivo. No centro: cilindro de vidro/metal com luz **teal** — a mesma cor que o leitor vai ligar ao doodle da pág. 4.
+**Quadro 1** — Splash: lab. Cilindro teal no centro.
 
-**Quadro 2** — Kael no limiar. Skate na mão, absurdo e humano.
+**Quadro 2** — Kael na porta. Skate na mão.
 
 **KAEL:**  
-Pai…
+…pai?
 
-**Quadro 3** — Mesa: notas queimadas, display morto, envelope com a letra de Adrian.  
-Ao lado, pasta carbonizada com resto de título: `PROT… HÉL…`
+**Quadro 3** — Mesa: notas queimadas, display morto, envelope. Pasta carbonizada: `PROT… HÉL…`
 
-**Quadro 4** — Ele pega o envelope **e** o fragmento de pasta. Ordem clara: primeiro a mensagem; o protocolo está incompleto.  
-*(Ponte: a próxima página É a mensagem — o leitor não “perde” a leitura.)*
+**Quadro 4** — Pega o envelope e o pedaço da pasta.
 
 ---
 
 ## PÁGINA 10 — A mensagem
-
-Texto sóbrio, página inteira:
 
 > Se você está lendo isto, o isolamento falhou.  
 > Não toque no cilindro sem ler o Protocolo Hélice.  
@@ -215,42 +217,40 @@ Texto sóbrio, página inteira:
 >  
 > Eu tentei de tudo.
 
-**Quadro final:** rosto de Kael. A frase do travesseiro volta. O humor morre.
+**Quadro final:** rosto de Kael.
 
 **KAEL:**  
-…você tentou o quê?
+…o quê que você tentou?
 
 ---
 
 ## PÁGINA 11 — Ele procura. Não acha. Toca mesmo assim.
 
-**Quadro 1** — Kael vasculha a mesa/gavetas com o fragmento na mão.
-
-**Close no fragmento:** `PROTOCOLO HÉLICE — 01/12` (resto queimado).
+**Quadro 1** — Vasculha. Fragmento: `PROTOCOLO HÉLICE — 01/12`
 
 **KAEL:**  
-Um de doze. Ótimo. Meu pai era organizado e um péssimo arquivista.
+Um de doze.  
+Sério, pai?
 
-**Quadro 2** — Olha o cilindro. Olha o aviso. Conflito visível — um quadro inteiro de hesitação.
+**Quadro 2** — Olha o cilindro. Olha o aviso. Hesita de verdade.
 
-**Quadro 3** — Sensor no pedestal: `HELIX / AUTH`. Poeira.
+**Quadro 3** — Sensor: `HELIX / AUTH`
 
-**Quadro 4** — Ele se aproxima. Skate no chão. Teal no cabelo azul.
+**Quadro 4** — Se aproxima.
 
 **KAEL:**  
-Só… olhar.  
-Não é tocar. É… auditoria.
+Eu só… quero ver.  
+Não vou mexer. Só ver.
 
-**Quadro 5** — Dois dedos no vidro.  
-*(Ponte: o leitor viu a busca falhar — a curiosidade não “pula” o aviso; ela o desobedece.)*
+**Quadro 5** — Dois dedos no vidro.
 
 ---
 
 ## PÁGINA 12 — Pareamento
 
-**Quadro 1** — CORE liga. *FWHUM* Máquina, não milagre.
+**Quadro 1** — CORE liga. *FWHUM*
 
-**Quadro 2** — HUD mono:
+**Quadro 2** — HUD:
 
 `BIOMARKER MATCH: 99.7%`  
 `SUBJECT: K. ZERO`  
@@ -259,72 +259,66 @@ Não é tocar. É… auditoria.
 **Quadro 3** — Kael recua.
 
 **KAEL:**  
-Ei— eu não aceitei—
+Ei— espera— eu não pedi—
 
-**Quadro 4** — Sensor pulsa. Dedos formigam. Corrente. Informação demais num corpo.
+**Quadro 4** — Dedos formigam. Corrente. Informação demais.
 
 ---
 
 ## PÁGINA 13 — Rejeição
 
-**Quadro 1** — Cai de joelhos. Um frame torto de dor.
+**Quadro 1** — Cai de joelhos.
 
-**Quadro 2** — Epistaxe. Sangue real.
+**Quadro 2** — Sangue no nariz.
 
-**Quadro 3** — HUD:
+**Quadro 3** — HUD: `CHANNEL OVERLOAD` / `HOST UNSTABLE`
 
-`CHANNEL OVERLOAD`  
-`HOST UNSTABLE`  
-`ABORT?`
-
-**Quadro 4** — Bate no pedestal como quem força shutdown.
+**Quadro 4** — Bate no pedestal.
 
 **KAEL:**  
-DESLIGA—!
+Para! Desliga!
 
-**Quadro 5** — Cilindro dim. Ele ofega no chão.  
-*(Ponte: o sangue daqui = o que ele lava na pág. 15.)*
+**Quadro 5** — Cilindro apaga. Ele ofega.
 
 ---
 
 ## PÁGINA 14 — Sobe com prova
 
-**Quadro 1** — Encostado na parede. Improvisa papel no nariz. Humor de sobrevivência.
+**Quadro 1** — Papel no nariz. Ri sem graça.
 
 **KAEL:**  
-Achei o segredo do meu pai e quase virei estatística. Nota dois pra tarde.
+Legal.  
+Achei o porão secreto do meu pai e quase desmaiei. Dia normal.
 
-**Quadro 2** — Guarda o fragmento `01/12` no bolso interno da jaqueta — **gesto claro, repetível**.
+**Quadro 2** — Guarda o fragmento `01/12` no bolso interno.
 
-**Quadro 3** — Olha o cilindro apagado.
+**Quadro 3** — Olha o cilindro.
 
 **KAEL:**  
-Ainda vamos conversar. Com menos sangue.
+A gente… termina essa conversa depois.
 
-**Quadro 4** — Sobe. Fecha o painel. Escritório mente de novo. No carpete da sala, uma gota de sangue que ele não viu.  
-*(Planta para Helena / Quinn depois — Coben.)*
+**Quadro 4** — Sobe. Fecha o painel. Gota de sangue no carpete — ele não vê.
 
 ---
 
 ## PÁGINA 15 — A primeira mentira completa
 
-**Quadro 1** — Banheiro. Lava o sangue. Espelho: mesmo Kael, temperatura diferente nos olhos.
+**Quadro 1** — Banheiro. Lava o sangue. Espelho.
 
-**Quadro 2** — Celular. Helena:
+**Quadro 2** — Celular:
 
 **HELENA:**  
 *Tudo bem aí?*
 
-**Quadro 3** — Ele digita *Tudo normal.* Apaga. Olha o algodão vermelho. Digita de novo.
+**Quadro 3** — Digita. Apaga. Olha o algodão. Digita de novo.
 
 **KAEL (envia):**  
-*Tudo bem. Macarrão nota 8.*
+*Tô bem. Macarrão tava bom.*
 
-**Quadro 4** — Bolso: o fragmento faz volume. Ele ajusta a jaqueta como quem esconde arma.
+**Quadro 4** — Ajusta a jaqueta por cima do fragmento.
 
-**KAEL (baixo):**  
-Mentiroso nível profissional. Obrigado, genética.  
-*(Ponte: a mentira desta página = o confronto da pág. 17.)*
+**KAEL:**  
+…desculpa, mãe.
 
 ---
 
@@ -332,29 +326,29 @@ Mentiroso nível profissional. Obrigado, genética.
 
 **Legenda:** `MESMA NOITE`
 
-**Quadro 1** — Quarto escuro. Kael deitado. Mão no bolso onde está o fragmento.
+**Quadro 1** — Quarto escuro. Mão no bolso do fragmento.
 
-**Quadro 2** — HUD residual no canto da visão:
+**Quadro 2** — HUD:
 
 `PAIRING: PARTIAL`  
 `RESIDUAL LINK: ACTIVE`  
 `WARNING: DO NOT FORCE SYNC`
 
-**Quadro 3** — Some. Ele senta, ofegante.
+**Quadro 3** — Some. Ele senta.
 
 **KAEL:**  
-…você ainda tá aí?
+Ainda tá aí?
 
-**Quadro 4** — Eco seco, não amigo:
+**Quadro 4**
 
 **CORE:**  
 `…aguardando input.`
 
-**Quadro 5** — Cobre o rosto. Risada nervosa.
+**Quadro 5** — Cobre o rosto. Risada baixa.
 
 **KAEL:**  
-Claro. Minha vida pediu um sistema operacional.  
-*(Ponte: “aguardando input” → o parafuso da pág. 19 não vem do nada; o sistema pediu ação.)*
+…você ficou.  
+Claro que você ficou.
 
 ---
 
@@ -362,32 +356,35 @@ Claro. Minha vida pediu um sistema operacional.
 
 **Legenda:** `MANHÃ`
 
-**Quadro 1** — Cozinha. Helena: café, olheiras, mão no ombro.
+**Quadro 1** — Cozinha. Helena põe a mão na testa dele.
 
 **HELENA:**  
-Você tá pálido.
+Você tá gelado. Dormiu direito?
 
 **KAEL:**  
-E você tá viva. Empate.
+Mais ou menos. Prova hoje. Cabeça zoada.
 
-**Quadro 2** — Ela ergue o queixo. Olhar clínico. Quase vê o resquício de sangue na narina.
+**Quadro 2** — Ela ergue o queixo. Olhar de médica.
 
 **HELENA:**  
-Fez febre? Epistaxe?
+Sangrou o nariz?
 
-**Quadro 3** — Microbeat. Ele quase conta. Não conta.
+**Quadro 3** — Um segundo demais.
 
 **KAEL:**  
-Durmi mal. Prova. Cérebro em greve.
+Não.  
+Só… dormi mal.
 
-**Quadro 4** — Beijo na testa. Porta.
+**Quadro 4**
 
 **HELENA:**  
-Se piorar, me liga.  
-E para de fingir que eu não percebo quando você mente.
+Se passar mal, me liga.  
+E Kael… eu sei quando você tá escondendo coisa. Sempre soube.
 
-**Quadro 5** — Sozinho. Aperta o bolso do fragmento. Decide ir à escola **como se nada** — a performance continua.  
-*(Ponte: por isso a pág. 18 existe; não é “outro dia solto”.)*
+**KAEL:**  
+Eu sei.
+
+**Quadro 5** — Beijo na testa. Ela sai. Ele aperta o bolso do fragmento.
 
 ---
 
@@ -395,27 +392,38 @@ E para de fingir que eu não percebo quando você mente.
 
 **Legenda:** `DEPOIS — ESCOLA`
 
-**Quadro 1** — Pátio. Ryo fala. Kael atrasa o reagente.
+**Quadro 1** — Pátio.
 
 **RYO:**  
-…você tá me ouvindo?
+…aí eu falei pra ela que não ia— mano. Alô?
 
 **KAEL:**  
-Tô. Você usou… palavras.
+Desculpa. Tô aqui. Continua.
 
-**Quadro 2** — Biblioteca. Maya desliza bilhete: *Você tá diferente hoje.*
-
-**Quadro 3** — Kael:
+**RYO:**  
+Você tá estranho hoje.
 
 **KAEL:**  
-Sempre fui. Agora com efeito sonoro.
+Dormi três horas. Me julga depois.
 
-**Quadro 4** — Maya não ri. Guarda o olhar.
+**Quadro 2** — Biblioteca. Maya desliza um papel: *Você tá diferente hoje.*
 
-**Quadro 5** — Saída da escola. Kael joga o skate no chão para ir embora — **o truck range errado**. Ele franze a testa.  
-*(Ponte mecânica: o parafuso faltando já está anunciado antes da oficina.)*
+**Quadro 3**
 
-**SFX:** *krr-tick* (metal frouxo)
+**KAEL:**  
+Diferente como?
+
+**MAYA:**  
+Não sei. Só… diferente.
+
+**Quadro 4** — Ela não sorri. Guarda o olhar. Ele não tem piada pronta.
+
+**Quadro 5** — Saída. Joga o skate no chão — truck range.
+
+**SFX:** *krr-tick*
+
+**KAEL:**  
+Ah, não…
 
 ---
 
@@ -423,93 +431,90 @@ Sempre fui. Agora com efeito sonoro.
 
 **Legenda:** `CASA — TARDE`
 
-**Quadro 1** — Quarto. Skate virado. Ele confirma: falta o parafuso do truck. Gaveta vazia.
+**Quadro 1** — Skate virado. Falta o parafuso. Gaveta vazia.
 
 **KAEL:**  
-Perfeito. O universo odeia rolamentos.
+Sumiu. Claro que sumiu.
 
-**Quadro 2** — O residual volta — como resposta ao problema na frente dele (não aleatório):
+**Quadro 2** — Residual responde ao problema:
 
 **CORE:**  
 `OBJECT MODEL: FASTENER`  
 `PHASE: HELIX`  
 `LOW COST / COMPILE?`
 
-**Quadro 3** — Outline wireframe do parafuso na palma — já com lattice teal. Soft Compile. Impulso.
+**Quadro 3** — Wireframe teal na palma.
 
 **KAEL:**  
-…só um parafuso.  
-Qual o pior que pode acontecer?
+…você consegue fazer um parafuso?  
+Só um. Sem drama.
 
-**Quadro 4** — Compilação em 3 beats: wireframe → preenchimento de lattice → **objeto sólido de Fase Hélice**.  
-Não vira metal normal. Fica translúcido teal/ciano, circuit-glass, ocupando volume real na palma — aura digital **permanente**.
+**Quadro 4** — Wireframe → lattice → sólido de Fase Hélice. Teal, circuit-glass, volume real.
 
-**SFX:** *ssshhk—tik* (som físico de metal… com chiado digital por baixo)
+**SFX:** *ssshhk—tik*
+
+**KAEL:**  
+…ok.
 
 ---
 
 ## PÁGINA 20 — Custo + eco
 
-**Quadro 1** — O parafuso na mão: **peso real**, rosca real, frio real — mas a luz atravessa a cabeça em veios de dados. Matéria de Fase Hélice. Impossível e concreto.
+**Quadro 1** — Parafuso na mão: peso real, aspecto digital. Sombra sólida no chão.
 
-**Quadro 2** — Dor em lâmina. Suor. Encosta na parede. O parafuso não some; continua ali, brilhando baixo.
+**Quadro 2** — Dor de cabeça. Suor. Encosta na parede.
 
 **Quadro 3** — HUD:
 
 `ENERGY: CRITICAL`  
 `PHASE: HELIX`  
 `OBJECT STABILITY: 84%`  
-`SIGNAL LEAK: DETECTED` ← **amarra a pág. 21**
+`SIGNAL LEAK: DETECTED`
 
-**Quadro 4** — Ele ri, assustado. Gira o parafuso entre os dedos — a sombra no chão é sólida; o objeto parece holograma que mente.
+**Quadro 4** — Ri baixo, assustado. Gira o parafuso.
 
 **KAEL:**  
-Eu… imprimi um parafuso.  
-Ele pesa.  
-E ainda assim parece mentira.  
-Meu pai era um gênio. Ou um criminoso. Ou os dois.
+Ele… pesa.  
+Mas parece que eu tô segurando uma mentira.  
+Pai… o que era isso?
 
-**Quadro 5** — Extreme close: lattice teal pulsando dentro da rosca.  
-**Corte seco no mesmo instante do leak.**
+**Quadro 5** — Lattice pulsando na rosca. Corte seco.
 
 ---
 
 ## PÁGINA 21 — Alguém ouviu
 
-**Quadro 1** — Sala sem janela. Monitor. Mesmo instante.
+**Quadro 1** — Sala sem janela. Mesmo instante.
 
-**Quadro 2** — Tela:
+**Quadro 2** — Monitor:
 
 `ANOMALY FLAG — SECTOR 7B`  
 `SIGNAL CLASS: HELIX-LIKE`  
 `CONFIDENCE: 41%`  
-`ACTION: PASSIVE WATCH`  
-`SOURCE BURST: matched to leak timestamp`
+`ACTION: PASSIVE WATCH`
 
-**Quadro 3** — Mão no mouse: **Pulse Cuff prateada** no pulso direito (LED clínico mínimo). Não vemos o rosto.  
-*(É Orin — o leitor só fecha na #4.)*
+**Quadro 3** — Mão com **Pulse Cuff** no mouse. Sem rosto.
 
-**VOZ 1 (off):**  
-Quarenta e um por cento não é nada.
+**VOZ 1:**  
+Quarenta e um por cento é ruído.
 
-**VOZ 2 (off, mais calma — Orin):**  
-Quarenta e um por cento é como o Arquivo começa.  
-…ou como um pai começa a ter esperança.
+**VOZ 2 (Orin, calma):**  
+Ruído é como a gente chama o que ainda não quer ver.  
+Mantém o watch.
 
-**Quadro 4** — Logo abstrato de constelação. ORION sem nome.  
-A cuff pulsa **âmbar** uma vez — vitals distantes de Noé, sem explicar ainda.
+**Quadro 4** — Logo-constelação. Cuff pisca âmbar uma vez.
 
 ---
 
-## PÁGINA 22 — Gancho amarrado
+## PÁGINA 22 — Gancho
 
 **Legenda:** `NOITE — TELHADO`
 
-**Quadro 1** — Kael no telhado. Skate ao lado. Parafuso de Fase Hélice na mão = prova (teal, digital, pesando de verdade).
+**Quadro 1** — Kael no telhado. Parafuso Hélice na mão.
 
-**Quadro 2** — Cidade normal. Mentirosa. A van branca **não** está mais na rua — sumiu. Isso também é informação.
+**Quadro 2** — Cidade. A van não está mais lá.
 
-**Quadro 3** — Residual:
+**Quadro 3** — HUD:
 
 `PROTOCOL HELIX: FRAGMENT 01 LOADED`  
 `NEXT: FIND REMAINING 02–12`  
@@ -517,41 +522,23 @@ A cuff pulsa **âmbar** uma vez — vitals distantes de Noé, sem explicar ainda
 
 **KAEL:**  
 “Eles”?  
-…legal. Eu nem sei quem eu sou nessa frase.
+Quem é “eles”?
 
-**Quadro 4** — Olha a janela da mãe. Olha o chão que esconde o lab. Aperta o parafuso.
+**Quadro 4** — Janela da mãe. Piso que esconde o lab. Aperta o parafuso.
 
 **KAEL:**  
-Pai… o que você botou dentro de mim?
+Pai…  
+o que você deixou em mim?
 
-**Quadro 5** — Embaixo, no lab, o CORE acende um LED teal sozinho — o mesmo *vmm* do início, agora respondendo a ele.
+**Quadro 5** — Lab escuro. CORE acende um LED teal.
 
 **SFX:** *…vmm.*
 
-**Legenda final:** `CONTINUA — Nº 2: PROTOCOLO HÉLICE`
+**Legenda:** `CONTINUA — Nº 2: PROTOCOLO HÉLICE`
 
 ---
 
-# FIM DA REVISTA Nº 1 (v1.1)
-
----
-
-## Mapa de amarrações (o que a revisão corrigiu)
-
-| Salto antigo | Ponte nova |
-|--------------|------------|
-| Passado → presente | Match cut olho + legenda “seis anos depois” |
-| Escola → casa sozinho | Recusa explícita do skate park (pág. 3) |
-| Van “aleatória” | Mesma van na janela e na rua de casa |
-| Som → escritório | Trilha sonora seguida pelo piso/corredor |
-| Aviso Hélice → toque | Busca ao protocolo **antes**; só acha 01/12 |
-| Chave do painel | Mesma chave de fenda do armário |
-| Sangue → mentira | Epistaxe lava → texto Helena → mentira |
-| CORE “input” → parafuso | Soft Compile responde a problema real do truck |
-| Escola → oficina | Truck range na saída da escola |
-| Parafuso → ORION | `SIGNAL LEAK` no mesmo instante do corte |
-| Anel | **Pulse Cuff** |
-| “Eles” no aviso | Kael questiona a palavra — leitor não fica para trás |
+# FIM · v1.2
 
 ---
 
@@ -560,8 +547,7 @@ Pai… o que você botou dentro de mim?
 | Item | Estado |
 |------|--------|
 | CORE | Pareamento parcial + residual |
-| Builds | 1 parafuso Fase Hélice (84%, visual digital-físico) + signal leak |
+| Builds | 1 parafuso Fase Hélice (84%) + signal leak |
 | Fragmento | Hélice 01/12 no bolso |
-| Helena | Sabe que ele mente; não sabe o quê |
+| Helena | Sabe que ele esconde algo |
 | Orin | Off-screen (cuff + voz); watch 41% |
-| Plantas | Gota de sangue no carpete; van; doodle = cilindro |
